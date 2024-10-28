@@ -725,9 +725,9 @@ button:hover::after {
     transform: rotate(0deg);
 }
 
-/* -----Play-Bars 1----- */
+/* -----Play-Bars----- */
 
-#play-bar1{
+#play-bar{
     height: 0;
     width: 0;
     position: fixed;
@@ -737,81 +737,9 @@ button:hover::after {
 }
 
 /* <--#1E1E1E --> */
-#play-bar1:target{
+#play-bar:target{
     height: auto;
     width: 90%;
-    bottom: 0;
-    border-top: 3px solid red;
-    box-shadow: 0px 4px 8px 1px transparent;
-    backdrop-filter: blur(1rem);
-    border-radius: 10px 10px 0 0; 
-    z-index: 10;
-}
-
-
-/* -----Play-Bars 2----- */
-
-#play-bar2{
-    height: 0;
-    width: 0;
-    position: fixed;
-    bottom: 0;
-    overflow: hidden;
-    transition: all 1s ease-in-out;
-}
-
-/* <--#1E1E1E --> */
-#play-bar2:target{
-    height: auto;
-    width: 90%;
-    left: 5%;
-    bottom: 0;
-    border-top: 3px solid red;
-    box-shadow: 0px 4px 8px 1px transparent;
-    backdrop-filter: blur(1rem);
-    border-radius: 10px 10px 0 0; 
-    z-index: 10;
-}
-
-/* -----Play-Bars 3----- */
-
-#play-bar3{
-    height: 0;
-    width: 0;
-    position: fixed;
-    bottom: 0;
-    overflow: hidden;
-    transition: all 1s ease-in-out;
-}
-
-/* <--#1E1E1E --> */
-#play-bar3:target{
-    height: auto;
-    width: 90%;
-    bottom: 0;
-    border-top: 3px solid red;
-    box-shadow: 0px 4px 8px 1px transparent;
-    backdrop-filter: blur(1rem);
-    border-radius: 10px 10px 0 0; 
-    z-index: 10;
-}
-
-/* -----Play-Bars 4----- */
-
-#play-bar4{
-    height: 0;
-    width: 0;
-    position: fixed;
-    bottom: 0;
-    overflow: hidden;
-    transition: all 1s ease-in-out;
-}
-
-/* <--#1E1E1E --> */
-#play-bar4:target{
-    height: auto;
-    width: 90%;
-    left: 5%;
     bottom: 0;
     border-top: 3px solid red;
     box-shadow: 0px 4px 8px 1px transparent;
@@ -1413,6 +1341,7 @@ i.fa-circle-play {
 	width: 100%;
 	word-wrap: break-word;
 }
+
 .language-content div p:nth-child(2n + 1) {
 	font-size: 12px;
 	font-weight: lighter;
@@ -1672,3 +1601,85 @@ hr {
         gap: 0.5rem;
     }
 }
+/* Bottom item*/
+.image-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 104px; 
+}
+
+.image-container img {
+    width: 100%; 
+    height: auto;
+    display: block;
+}
+
+.image-container .play-button {
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.1); 
+    z-index: 1;
+    transition: opacity 0.3s; 
+}
+
+.image-container .play-button a i {
+    font-size: 40px;
+    color : #FFFFFF;
+    position: absolute;
+    left: 40%;
+    top: 30%;
+}
+
+.image-container:hover .play-button {
+    opacity: 1;
+}
+
+/* Left item */
+.left-item {
+    position: relative;
+    display: inline-block;
+    width: 80px;
+    max-width: 80px; 
+}
+
+.left-item img {
+    width: 80px; 
+    height: 80px;
+    display: block;
+}
+
+.left-item .play-button {
+    position: absolute;
+    top: 0%;
+    left: 120%;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.1); 
+    z-index: 1;
+    transition: opacity 0.3s; 
+} 
+
+.left-item .play-button a i {
+    font-size: 20px;
+    color : #FFFFFF;
+    position: absolute;
+    left: 40%;
+    top: 40%;
+}
+
+.left-item:hover .play-button {
+    opacity: 1;
+}
+

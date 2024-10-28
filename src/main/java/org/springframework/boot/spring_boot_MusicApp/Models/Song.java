@@ -3,10 +3,22 @@ package org.springframework.boot.spring_boot_MusicApp.Models;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "songs")
 public class Song {
+	
+	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // Tự động tạo giá trị cho ID
 	private int SongID;
 	private String title;
 	private LocalTime Duration;
+	private String LinkPath;
 	private String Image;
 	private int ArtistID;
 	private LocalDate ReleaseDate;
@@ -46,6 +58,12 @@ public class Song {
 	}
 	public void setReleaseDate(LocalDate releaseDate) {
 		ReleaseDate = releaseDate;
+	}
+	public String getLinkPath() {
+		return LinkPath;
+	}
+	public void setLinkPath(String linkPath) {
+		LinkPath = linkPath;
 	}
 	
 }

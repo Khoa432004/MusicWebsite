@@ -134,204 +134,60 @@
                 <div class="latest-release-content">
 
                     <!-- First Card -->
-                    <div class="card">
-                        <img src="assets/image/marshmello.jpg" alt="marshmello">
-
-                        <div class="play-button">
-                            <a href="#play-bar1"><i class="fas fa-play"></i></a>
-                        </div>
-
-                        <div id="play-bar1">
-                            <a href="#"><button>
-                                Close
-                              </button>
-                            </a>
-
-                            <div class="play-bar-content">
-
-                                <div class="active-song-description">
-                                    
-                                    <div id="song-image">
-                                        <img src="assets/image/marshmello.jpg" alt="marshmello">
-                                    </div>
-                                    
-                                    <div class="song-desc">
-                                        <div>
-                                            <marquee behavior="scroll" direction="left" scrollamount="15" scrolldelay="500"><h3>Happier</h3></marquee>
-                                        </div>
-                                        <div>
-                                            Marshmello
-                                        </div>
-                                    </div>
-                                        
-                                    <div class="heart-and-ban-icon">
-                                        <span>
-                                            <i class="far fa-heart"></i>
-                                        </span>
-                                    </div>
-                                </div>
-                                
-                                <div class="player">
-                                    <div class="controls">
-                                        <div><i class="fas fa-random"></i></div>
-                                        <div><i class="fas fa-step-backward"></i></div>
-                                        <div><i class="fas fa-pause-circle"></i></div>
-                                        <div><i class="fas fa-step-forward"></i></div>
-                                        <div><i class="fas fa-redo"></i></div>
-                                    </div>
-                                    
-                                    <div id="slider">
-                                        
-                                        <div class="time">
-                                            0:01
-                                        </div>
-                                        <div class="slidecontainer">
-                                            <input type="range" min="0" max="100" value="1" class="slider" id="myRange">
-                                        </div>
-                                        
-                                        <div class="time">
-                                            3:35
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="extras">
-                                    <div>
-                                        <i class="fas fa-list-ul"></i>
-                                    </div>
-                                    <div>
-                                        <i class="fas fa-laptop"></i>
-                                    </div>
-                                    <div>
-                                        <i class="fas fa-volume-up"></i>
-                                    </div>
-                                    <div class="slidecontainer" style="max-width:5rem;">
-                                        <input type="range" min="0" max="100" value="15" class="slider" id="myRange" style="margin-top:0px;">
-                                    </div>
-                                    <div>
-                                        <i class="fas fa-expand-alt"></i>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <div class="song-disciption">
-                            <h3>Happier</h3>
-                            <p>Dec, 2022</p>
-                        </div>
-
-                        <div class="options">
-                            <label for="latest-release-checkbox"><i class="fas fa-ellipsis-h"></i></label>
-                            <input type="checkbox" id="latest-release-checkbox">
-                            <div class="latest-release-dropdown">
-                                <div class="drop-item">
-                                    <p><i class="fas fa-play-circle"></i>Play
-                                        Now</a></p>
-                                </div>
-                                <hr>
-                                <div class="drop-item">
-                                    <p><i class="fas fa-list-ul"></i> Add to Queue</p>
-                                </div>
-                                <hr>
-                                <div class="drop-item">
-                                    <p><i class="fas fa-music"></i> Add to playlist</p>
-                                </div>
-                                <hr>
-                                <div class="drop-item">
-                                    <p><i class="fas fa-info-circle"></i> Get Info</p>
-                                </div>
-                            </div>
-
-                            <!-- Duration -->
-                            <p class="time">
-                                3:35
-                            </p>
-                        </div>
-                    </div>
+                    <form id="songForm" action="/getSongDetails" method="get">
+	                    <div class="card">
+	                        <img src="assets/image/marshmello.jpg" alt="marshmello">
+	
+	                        <div class="play-button">
+					            <!-- Sử dụng onclick để gửi ID đến servlet -->
+					            <a href="javascript:void(0);" onclick="submitForm(1)">
+					                <i class="fas fa-play"></i>
+					            </a>
+					        </div>
+	
+	                        <div class="song-disciption">
+	                            <h3>Happier</h3>
+	                            <p>Dec, 2022</p>
+	                        </div>
+	
+	                        <div class="options">
+	                            <label for="latest-release-checkbox"><i class="fas fa-ellipsis-h"></i></label>
+	                            <input type="checkbox" id="latest-release-checkbox">
+	                            <div class="latest-release-dropdown">
+	                                <div class="drop-item">
+	                                    <p><i class="fas fa-play-circle"></i>Play
+	                                        Now</a></p>
+	                                </div>
+	                                <hr>
+	                                <div class="drop-item">
+	                                    <p><i class="fas fa-list-ul"></i> Add to Queue</p>
+	                                </div>
+	                                <hr>
+	                                <div class="drop-item">
+	                                    <p><i class="fas fa-music"></i> Add to playlist</p>
+	                                </div>
+	                                <hr>
+	                                <div class="drop-item">
+	                                    <p><i class="fas fa-info-circle"></i> Get Info</p>
+	                                </div>
+	                            </div>
+	
+	                            <!-- Duration -->
+	                            <p class="time">
+	                                3:35
+	                            </p>
+	                        </div>
+	                        <!-- Input ẩn để gửi ID bài hát -->
+					        <input type="hidden" name="songId" id="songId">
+	                    </div>
+                    </form>
 
                     <!-- Second Card -->
                     <div class="card">
                         <img src="assets/image/billie.jpg" alt="marshmello">
 
                         <div class="play-button">
-                            <a href="#play-bar2"><i class="fas fa-play"></i></a>
-                        </div>
-
-                        <div id="play-bar2">
-                            <a href="#"><button>
-                                Close
-                              </button>
-                            </a>
-
-                            <div class="play-bar-content">
-
-                                <div class="active-song-description">
-                                    
-                                    <div id="song-image">
-                                        <img src="assets/image/billie.jpg" alt="marshmello">
-                                    </div>
-                                    
-                                    <div class="song-desc">
-                                        <div>
-                                            <marquee behavior="scroll" direction="left" scrollamount="15" scrolldelay="500"><h3>Bad Guy</h3></marquee>
-                                        </div>
-                                        <div>
-                                            Billie Eilish
-                                        </div>
-                                    </div>
-                                        
-                                    <div class="heart-and-ban-icon">
-                                        <span>
-                                            <i class="far fa-heart"></i>
-                                        </span>
-                                    </div>
-                                </div>
-                                
-                                <div class="player">
-                                    <div class="controls">
-                                        <div><i class="fas fa-random"></i></div>
-                                        <div><i class="fas fa-step-backward"></i></div>
-                                        <div><i class="fas fa-pause-circle"></i></div>
-                                        <div><i class="fas fa-step-forward"></i></div>
-                                        <div><i class="fas fa-redo"></i></div>
-                                    </div>
-                                    
-                                    <div id="slider">
-                                        
-                                        <div class="time">
-                                            0:01
-                                        </div>
-                                        <div class="slidecontainer">
-                                            <input type="range" min="0" max="100" value="1" class="slider" id="myRange">
-                                        </div>
-                                        
-                                        <div class="time">
-                                            4:03
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="extras">
-                                    <div>
-                                        <i class="fas fa-list-ul"></i>
-                                    </div>
-                                    <div>
-                                        <i class="fas fa-laptop"></i>
-                                    </div>
-                                    <div>
-                                        <i class="fas fa-volume-up"></i>
-                                    </div>
-                                    <div class="slidecontainer" style="max-width: 5rem;">
-                                        <input type="range" min="0" max="100" value="0" class="slider" id="myRange" style="margin-top:0px;">
-                                    </div>
-                                    <div>
-                                        <i class="fas fa-expand-alt"></i>
-                                    </div>
-                                </div>
-
-                            </div>
-
+                            <a href="#play-bar"><i class="fas fa-play"></i></a>
                         </div>
 
                         <div class="song-disciption">
@@ -373,85 +229,7 @@
                         <img src="assets/image/weeknd.jpg" alt="weeknd">
 
                         <div class="play-button">
-                            <a href="#play-bar3"><i class="fas fa-play"></i></a>
-                        </div>
-
-                        <div id="play-bar3">
-                            <a href="#"><button>
-                                Close
-                              </button>
-                            </a>
-
-                            <div class="play-bar-content">
-
-                                <div class="active-song-description">
-                                    
-                                    <div id="song-image">
-                                        <img src="assets/image/weeknd.jpg" alt="marshmello">
-                                    </div>
-                                    
-                                    <div class="song-desc">
-                                        <div>
-                                            <div>
-                                                <marquee behavior="scroll" direction="left" scrollamount="15" scrolldelay="500"><h3>Often</h3></marquee>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            Weeknd
-                                        </div>
-                                    </div>
-                                       
-                                    <div class="heart-and-ban-icon">
-                                        <span>
-                                            <i class="far fa-heart"></i>
-                                        </span>
-                                    </div>
-                                </div>
-                                
-                                <div class="player">
-                                    <div class="controls">
-                                        <div><i class="fas fa-random"></i></div>
-                                        <div><i class="fas fa-step-backward"></i></div>
-                                        <div><i class="fas fa-pause-circle"></i></div>
-                                        <div><i class="fas fa-step-forward"></i></div>
-                                        <div><i class="fas fa-redo"></i></div>
-                                    </div>
-                                    
-                                    <div id="slider">
-                                        
-                                        <div class="time">
-                                            0:01
-                                        </div>
-                                        <div class="slidecontainer">
-                                            <input type="range" min="0" max="100" value="1" class="slider" id="myRange">
-                                        </div>
-                                        
-                                        <div class="time">
-                                            3:50
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="extras">
-                                    <div>
-                                        <i class="fas fa-list-ul"></i>
-                                    </div>
-                                    <div>
-                                        <i class="fas fa-laptop"></i>
-                                    </div>
-                                    <div>
-                                        <i class="fas fa-volume-up"></i>
-                                    </div>
-                                    <div class="slidecontainer" style="max-width:5rem;">
-                                        <input type="range" min="0" max="100" value="0" class="slider vol" id="myRange" style="margin-top:0px;">
-                                    </div>
-                                    <div>
-                                        <i class="fas fa-expand-alt"></i>
-                                    </div>
-                                </div>
-
-                            </div>
-                                
+                            <a href="#play-bar"><i class="fas fa-play"></i></a>
                         </div>
 
                         <div class="song-disciption">
@@ -493,86 +271,7 @@
                         <img src="assets/image/love.png" alt="marshmello">
 
                         <div class="play-button">
-                            <a href="#play-bar4"><i class="fas fa-play"></i></a>
-                        </div>
-
-                        <div id="play-bar4">
-                            <a href="#"><button>
-                                Close
-                              </button>
-                            </a>
-
-                            <div class="play-bar-content">
-
-                                <div class="active-song-description">
-                                    
-                                    <div id="song-image">
-                                        <img src="assets/image/love.png" alt="marshmello">
-                                    </div>
-                                    
-                                    <div class="song-desc">
-                                        <div>
-                                            <div>
-                                                <marquee behavior="scroll" direction="left" scrollamount="15" scrolldelay="500"><h3>Lonely</h3></marquee>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            Justin Bieber
-                                        </div>
-                                    </div>
-                                        
-                                    <div class="heart-and-ban-icon">
-                                        <span>
-                                            <i class="far fa-heart"></i>
-                                        </span>
-                                    </div>
-                                </div>
-                               
-                                <div class="player">
-                                    <div class="controls">
-                                        <div><i class="fas fa-random"></i></div>
-                                        <div><i class="fas fa-step-backward"></i></div>
-                                        <div><i class="fas fa-pause-circle"></i></div>
-                                        <div><i class="fas fa-step-forward"></i></div>
-                                        <div><i class="fas fa-redo"></i></div>
-                                    </div>
-                                    
-
-                                    <div id="slider">
-                                        
-                                        <div class="time">
-                                            0:01
-                                        </div>
-                                        <div class="slidecontainer">
-                                            <input type="range" min="0" max="100" value="1" class="slider" id="myRange">
-                                        </div>
-                                        <!-- total time -->
-                                        <div class="time">
-                                            3:40
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="extras">
-                                    <div>
-                                        <i class="fas fa-list-ul"></i>
-                                    </div>
-                                    <div>
-                                        <i class="fas fa-laptop"></i>
-                                    </div>
-                                    <div>
-                                        <i class="fas fa-volume-up"></i>
-                                    </div>
-                                    <div class="slidecontainer" style="max-width: 5rem;">
-                                        <input type="range" min="0" max="100" value="0" class="slider" id="myRange" style="margin-top:0px;">
-                                    </div>
-                                    <div>
-                                        <i class="fas fa-expand-alt"></i>
-                                    </div>
-                                </div>
-
-                            </div>
-
+                            <a href="#play-bar"><i class="fas fa-play"></i></a>
                         </div>
 
                         <div class="song-disciption">
@@ -611,8 +310,69 @@
                 </div>
             </div>
 
+			<!-- Play music -->
+			<div id="play-bar">
+				<a href="#" onclick="closeAudio()"><button>Close</button></a>
 
-            <!-- Popular Artist -->
+				<div class="play-bar-content">
+					<div class="active-song-description">
+						<div id="song-image">
+							<img src="assets/image/marshmello.jpg" alt="marshmello">
+						</div>
+
+						<div class="song-desc">
+							<div>
+								<marquee behavior="scroll" direction="left" scrollamount="15"
+									scrolldelay="500">
+									<h3>Happier</h3>
+								</marquee>
+							</div>
+							<div>Marshmello</div>
+						</div>
+
+						<div class="heart-and-ban-icon">
+							<span><i class="far fa-heart"></i></span>
+						</div>
+					</div>
+
+					<div class="player">
+						<audio id="audio-player" controls class="audio">
+							<source src="assets/music/Happier.mp3" type="audio/mp3"
+								class="sources">
+						</audio>
+					</div>
+
+					<div class="extras">
+						<div>
+							<i class="fas fa-list-ul"></i>
+						</div>
+						<div>
+							<i class="fas fa-laptop"></i>
+						</div>
+						<div>
+							<i class="fas fa-volume-up"></i>
+						</div>
+						<div class="slidecontainer" style="max-width: 5rem;">
+							<input type="range" min="0" max="100" value="15" class="slider"
+								id="myRange" style="margin-top: 0px;">
+						</div>
+						<div>
+							<i class="fas fa-expand-alt"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<script>
+				function closeAudio() {
+					const audioPlayer = document.getElementById('audio-player');
+					audioPlayer.pause();
+					audioPlayer.currentTime = 0;
+				}
+			</script>
+
+
+			<!-- Popular Artist -->
             <section class="popular-artists">
     
                 <header><h3 class="font">Popular Artists</h3></header>
@@ -769,33 +529,52 @@
                 </h3>
 
                 <div class="language-content">
-                    <div>
+                
+                    <div class="image-container">
                         <img src="assets/image/latest1.jpeg">
-                        <p>Anti-Hero</p>
+						<div class="play-button">
+                            <a href="#play-bar"><i class="fas fa-play"></i></a>
+                        </div>
+						<p>Anti-Hero</p>
                         <p>Dec, 2022</p>
                     </div>
-                    <div>
+                    <div class="image-container">
                         <img src="assets/image/latest2.jpeg">
+                        <div class="play-button">
+                            <a href="#play-bar"><i class="fas fa-play"></i></a>
+                        </div>
                         <p>Wine</p>
                         <p>Jan, 2023</p>
                     </div>
-                    <div>
+                    <div class="image-container">
                         <img src="assets/image/latest3.jpg">
+                        <div class="play-button">
+                            <a href="#play-bar"><i class="fas fa-play"></i></a>
+                        </div>
                         <p>Love</p>
                         <p>Dec, 2022</p>
                     </div>
-                    <div>
+                    <div class="image-container">
                         <img src="assets/image/latest4.jpg">
+                        <div class="play-button">
+                            <a href="#play-bar"><i class="fas fa-play"></i></a>
+                        </div>
                         <p>The 30th</p>
                         <p>Nov, 2022</p>
                     </div>
-                    <div>
+                    <div class="image-container">
                         <img src="assets/image/latest5.jpeg">
+                        <div class="play-button">
+                            <a href="#play-bar"><i class="fas fa-play"></i></a>
+                        </div>
                         <p>Satellite</p>
                         <p>Jan, 2023</p>
                     </div>
-                    <div>
+                    <div class="image-container">
                         <img src="assets/image/latest6.jpeg">
+                        <div class="play-button">
+                            <a href="#play-bar"><i class="fas fa-play"></i></a>
+                        </div>
                         <p>Loser</p>
                         <p>Feb, 2023</p>
                     </div>
@@ -811,33 +590,51 @@
 
                 <div class="language-content">
 
-                    <div>
+                    <div class="image-container">
                         <img src="assets/image/hindi1.jpg">
+                        <div class="play-button">
+                            <a href="#play-bar"><i class="fas fa-play"></i></a>
+                        </div>
                         <p>Shree RAM</p>
                         <p>April, 2023</p>
                     </div>
-                    <div>
+                    <div class="image-container">
                         <img src="assets/image/hindi2.jpg">
+                        <div class="play-button">
+                            <a href="#play-bar"><i class="fas fa-play"></i></a>
+                        </div>
                         <p>Bhola</p>
                         <p>April, 2023</p>
                     </div>
-                    <div>
+                    <div class="image-container">
                         <img src="assets/image/hindi3.jpeg">
+                        <div class="play-button">
+                            <a href="#play-bar"><i class="fas fa-play"></i></a>
+                        </div>
                         <p>Company</p>
                         <p>Mar, 2023</p>
                     </div>
-                    <div>
+                    <div class="image-container">
                         <img src="assets/image/hindi4.jpg">
+                        <div class="play-button">
+                            <a href="#play-bar"><i class="fas fa-play"></i></a>
+                        </div>
                         <p>U turn</p>
                         <p>Feb, 2023</p>
                     </div>
-                    <div>
+                    <div class="image-container">
                         <img src="assets/image/hindi5.jpg">
+                        <div class="play-button">
+                            <a href="#play-bar"><i class="fas fa-play"></i></a>
+                        </div>
                         <p>Bairiya</p>
                         <p>Feb, 2023</p>
                     </div>
-                    <div>
+                    <div class="image-container">
                         <img src="assets/image/hindi6.jpg">
+                        <div class="play-button">
+                            <a href="#play-bar"><i class="fas fa-play"></i></a>
+                        </div>
                         <p>Ghoomey</p>
                         <p>Mar, 2023</p>
                     </div>
@@ -886,10 +683,11 @@
                         <div style="margin-right:4px;">
                             01
                         </div>
-                        <div>
-                            
+                        <div class="left-item">
+							<div class="play-button">
+                            	<a href="#play-bar"><i class="fas fa-play"></i></a>
+                       		 </div>
                             <img src="assets/image/hindi1.jpg">
-                     
                         </div>
                         
                         <div>
@@ -914,7 +712,10 @@
                         <div style="margin-right:4px;">
                             02
                         </div>
-                        <div>
+                        <div class="left-item">
+                        	<div class="play-button">
+                            	<a href="#play-bar"><i class="fas fa-play"></i></a>
+                       		 </div>
                             <img src="assets/image/hindi2.jpg">
                         </div>
 
@@ -940,7 +741,10 @@
                         <div style="margin-right:4px;">
                             03
                         </div>
-                        <div>
+                        <div class="left-item">
+                        	<div class="play-button">
+                            	<a href="#play-bar"><i class="fas fa-play"></i></a>
+                       		 </div>
                             <img src="assets/image/hindi3.jpeg">
                         </div>
                         <div>
@@ -966,7 +770,10 @@
                         <div style="margin-right:4px;">
                             04
                         </div>
-                        <div>
+                        <div class="left-item">
+                        	<div class="play-button">
+                            	<a href="#play-bar"><i class="fas fa-play"></i></a>
+                       		 </div>
                             <img src="assets/image/hindi4.jpg">
                         </div>
                         <div>
@@ -991,7 +798,10 @@
                         <div style="margin-right:4px;">
                             05
                         </div>
-                        <div>
+                        <div class="left-item">
+                        	<div class="play-button">
+                            	<a href="#play-bar"><i class="fas fa-play"></i></a>
+                       		 </div>
                             <img src="assets/image/hindi5.jpg">
                         </div>
                         <div>
@@ -1016,7 +826,10 @@
                         <div style="margin-right:4px;">
                             06
                         </div>
-                        <div>
+                        <div class="left-item">
+                        	<div class="play-button">
+                            	<a href="#play-bar"><i class="fas fa-play"></i></a>
+                       		 </div>
                             <img src="assets/image/latest6.jpeg">
                         </div>
                         <div>
@@ -1041,7 +854,10 @@
                         <div style="margin-right:4px;">
                             07
                         </div>
-                        <div>
+                        <div class="left-item">
+                        	<div class="play-button">
+                            	<a href="#play-bar"><i class="fas fa-play"></i></a>
+                       		 </div>
                             <img src="assets/image/love.png">
                         </div>
                         <div>
@@ -1064,7 +880,10 @@
                         <div style="margin-right:4px;">
                             08
                         </div>
-                        <div>
+                        <div class="left-item">
+                        	<div class="play-button">
+                            	<a href="#play-bar"><i class="fas fa-play"></i></a>
+                       		 </div>
                             <img src="assets/image/popular-artist2.jpg">
                         </div>
                         <div>
@@ -1089,7 +908,10 @@
                         <div style="margin-right:4px;">
                             09
                         </div>
-                        <div>
+                        <div class="left-item">
+                        	<div class="play-button">
+                            	<a href="#play-bar"><i class="fas fa-play"></i></a>
+                       		 </div>
                             <img src="assets/image/popular-artist3.jpeg">
                         </div>
                         <div>
@@ -1115,7 +937,10 @@
                         <div style="margin-right:4px;">
                             10
                         </div>
-                        <div>
+                        <div class="left-item">
+                        	<div class="play-button">
+                            	<a href="#play-bar"><i class="fas fa-play"></i></a>
+                       		 </div>
                             <img src="assets/image/popular-artist4.jpg">
                         </div>
                         <div>
@@ -1138,7 +963,10 @@
                         <div style="margin-right:4px;">
                             11
                         </div>
-                        <div>
+                        <div class="left-item">
+                        	<div class="play-button">
+                            	<a href="#play-bar"><i class="fas fa-play"></i></a>
+                       		 </div>
                             <img src="assets/image/latest2.jpeg">
                         </div>
                         <div>
@@ -1496,6 +1324,14 @@
                 </div>
             </div>
         </div>
+        
+        <script>
+		    function submitForm(id) {
+		        document.getElementById('songId').value = id;
+		
+		        document.getElementById('songForm').submit();
+		    }
+		</script>
         <!-- Queue Menu Ends -->
         
     </main>
