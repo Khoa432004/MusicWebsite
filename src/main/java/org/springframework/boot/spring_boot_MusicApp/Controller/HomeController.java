@@ -5,11 +5,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/")
 public class HomeController {
-
-    @GetMapping
-    public String showHome() {
-        return "Home"; // trả về view Home.jsp
+    @GetMapping("/Home")
+    public String home() {
+        return "Home";
     }
 }
+

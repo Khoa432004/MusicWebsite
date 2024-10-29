@@ -12,7 +12,8 @@ public class SongServices {
     @Autowired
     private SongRepository_Dao songRepository;
 
-    public Song getSongById(Integer id) {
-        return songRepository.findById(id).orElse(null);
+    public Song getSongById(Integer songId) {
+        Optional<Song> song = songRepository.findById(songId);
+        return song.orElse(null);
     }
 }
