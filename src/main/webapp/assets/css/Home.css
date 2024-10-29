@@ -1683,3 +1683,49 @@ hr {
     opacity: 1;
 }
 
+/* Css audio */
+/* Xóa nền cho thẻ audio */
+#audio-player {
+	width:120%;
+    background: transparent;
+    border: none;
+}
+
+/* Chỉnh kiểu cho các nút */
+#audio-player::-webkit-media-controls {
+    background-color: transparent;
+    display: flex;
+    gap: 30px;
+}
+
+#audio-player::-webkit-media-controls-enclosure {
+    background-color: transparent;
+}
+
+/* Đổi màu nút điều khiển thành trắng */
+#audio-player::-webkit-media-controls-panel {
+    background-color: transparent;
+    color: white;
+}
+
+/* Đổi màu thanh tải nhạc thành trắng */
+#audio-player::-webkit-media-controls-current-time-display,
+#audio-player::-webkit-media-controls-time-remaining-display {
+    color: white;
+}
+
+/* Thay đổi màu cho các nút khác (play, mute, fullscreen...) */
+#audio-player::-webkit-media-controls-play-button,
+#audio-player::-webkit-media-controls-mute-button,
+#audio-player::-webkit-media-controls-fullscreen-button {
+    filter: brightness(0) invert(1);
+}
+
+/* Thêm khoảng cách giữa các nút điều khiển */
+#audio-player::-webkit-media-controls button {
+    margin-right: 10px;
+}
+
+
+
+

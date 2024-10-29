@@ -65,7 +65,7 @@
 			    <div class="login">
 			        <img src="https://img.icons8.com/external-smashingstocks-glyph-smashing-stocks/66/FFFFFF/external-reviews-digital-marketing-smashingstocks-glyph-smashing-stocks-2.png"/>
 			        <h4>
-			        	<a href="Login.jsp" style="color: #ffff; text-decoration: none;">Log in</a>
+			        	<a href="Login.html" style="color: #ffff; text-decoration: none;">Log in</a>
 			        </h4>
 			    </div>
 			</div>
@@ -336,20 +336,51 @@
 			                <source id="audioSource" src="assets/music/Happier.mp3" type="audio/mp3" class="sources">
 			            </audio>
 			        </div>
-			
-			        <div class="extras">
+
+					<!-- <div class="player">
+						<div class="controls">
+							<div>
+								<i class="fas fa-random"></i>
+							</div>
+							<div>
+								<i class="fas fa-step-backward"></i>
+							</div>
+							<div>
+								<i class="fas fa-pause-circle"></i>
+							</div>
+							<div>
+								<i class="fas fa-step-forward"></i>
+							</div>
+							<div>
+								<i class="fas fa-redo"></i>
+							</div>
+						</div>
+
+						<div id="slider">
+
+							<div class="time">0:01</div>
+							<div class="slidecontainer">
+								<input type="range" min="0" max="100" value="1" class="slider"
+									id="myRange">
+							</div>
+
+							<div class="time">3:50</div>
+						</div>
+					</div> -->
+
+					<div class="extras">
 			            <div>
 			                <i class="fas fa-list-ul"></i>
 			            </div>
 			            <div>
 			                <i class="fas fa-laptop"></i>
 			            </div>
-			            <div>
+<!-- 			            <div>
 			                <i class="fas fa-volume-up"></i>
-			            </div>
-			            <div class="slidecontainer" style="max-width: 5rem;">
+			            </div> -->
+<!-- 			            <div class="slidecontainer" style="max-width: 5rem;">
 			                <input type="range" min="0" max="100" value="15" class="slider" id="myRange" style="margin-top: 0px;">
-			            </div>
+			            </div> -->
 			            <div>
 			                <i class="fas fa-expand-alt"></i>
 			            </div>
@@ -378,7 +409,7 @@
                     <!-- Artist 1 -->
                     <div class="artist">
                         <div class="image2">
-                            <a href="SinglePlaylistScreen.jsp" title="SinglePlaylistScreen">
+                            <a href="SinglePlaylistScreen.html" title="SinglePlaylistScreen">
                                 <div class="play">
                                     <i class="fas fa-play"></i>
                                 </div>
@@ -390,7 +421,7 @@
                     <!-- Artist 2 -->
                     <div class="artist">
                         <div class="image2">
-                            <a href="SinglePlaylistScreen.jsp" title="SinglePlaylistScreen">
+                            <a href="SinglePlaylistScreen.html" title="SinglePlaylistScreen">
                                 <div class="play">
                                     <i class="fas fa-play"></i>
                                 </div>
@@ -402,7 +433,7 @@
                     <!-- Artist 3 -->
                     <div class="artist">
                         <div class="image2">
-                            <a href="SinglePlaylistScreen.jsp" title="SinglePlaylistScreen">
+                            <a href="SinglePlaylistScreen.html" title="SinglePlaylistScreen">
                                 <div class="play">
                                     <i class="fas fa-play"></i>
                                 </div>
@@ -414,7 +445,7 @@
                     <!-- Artist 4 -->
                     <div class="artist">
                         <div class="image2">
-                            <a href="SinglePlaylistScreen.jsp" title="SinglePlaylistScreen">
+                            <a href="SinglePlaylistScreen.html" title="SinglePlaylistScreen">
                                 <div class="play">
                                     <i class="fas fa-play"></i>
                                 </div>
@@ -426,7 +457,7 @@
                     <!-- Artist 5 -->
                     <div class="artist">
                         <div class="image2">
-                            <a href="SinglePlaylistScreen.jsp" title="SinglePlaylistScreen">
+                            <a href="SinglePlaylistScreen.html" title="SinglePlaylistScreen">
                                 <div class="play">
                                     <i class="fas fa-play"></i>
                                 </div>
@@ -438,7 +469,7 @@
                     <!-- Artist 6 -->
                     <div class="artist">
                         <div class="image2">
-                            <a href="SinglePlaylistScreen.jsp" title="SinglePlaylistScreen">
+                            <a href="SinglePlaylistScreen.html" title="SinglePlaylistScreen">
                                 <div class="play">
                                     <i class="fas fa-play"></i>
                                 </div>
@@ -683,9 +714,9 @@
                     </h4>
 
                     <div class="queue-options" id="queue-option-box">
-                        <p><a href="SinglePlaylistScreen.jsp" style="color:#007bff; font-weight:bolder;">PLAYLISTS</a></p>
+                        <p><a href="SinglePlaylistScreen.html" style="color:#007bff; font-weight:bolder;">PLAYLISTS</a></p>
                         <hr>
-                        <p><a href="SinglePlaylistScreen.jsp" style="color:#007bff; font-weight:bolder;">RECENT PLAYED</a></p>
+                        <p><a href="SinglePlaylistScreen.html" style="color:#007bff; font-weight:bolder;">RECENT PLAYED</a></p>
                         <hr>
                         <p><a href="#" style="color:red; font-weight:bolder;">CLOSE</a></p>
                     </div>
@@ -1391,8 +1422,7 @@
 			        .catch(error => console.error('Error fetching song details:', error));
 			    window.location.hash = '#play-bar';
 			}
-			</script>
-
+		</script>
 		
         <!-- Queue Menu Ends -->
         
