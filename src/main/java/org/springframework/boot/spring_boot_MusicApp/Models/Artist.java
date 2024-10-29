@@ -1,8 +1,25 @@
 package org.springframework.boot.spring_boot_MusicApp.Models;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "artist")
 public class Artist {
+	
+	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ArtistID")
 	private int ArtistID;
+	
+	@Column(name = "Name")
 	private String Name;
+	
+	@Column(name = "Avatar")
 	private String Avatar;
 	
 	public int getArtistID() {

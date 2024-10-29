@@ -88,7 +88,7 @@ INSERT INTO Song (Title, Duration, Image,LinkPath, ArtistID, ReleaseDate) VALUES
 ('Sorry', '00:03:19','assets/song img/Sorry.jpg', 'assets/music/Sorry.mp3', 9,'2022-10-30'),
 ('Starboy', '00:03:47','assets/song img/Starboy.jpeg', 'assets/music/Starboy.mp3', 14,'2022-10-01'),
 ('Statellite', '00:03:04','assets/song img/Statellite.jpeg', 'assets/music/Statellite.mp3', 10,'2022-10-01'),
-('The 30th', '00:03:36','assets/song img/The 30th.jpg', 'assets/music/HThe 30th.mp3', 7,'2022-10-15'),
+('The 30th', '00:03:36','assets/song img/The 30th.jpg', 'assets/music/The 30th.mp3', 7,'2022-10-15'),
 ('U turn', '00:01:38','assets/song img/U turn.jpg', 'assets/music/U turn.mp3', 12,'2022-10-30'),
 ('Wine', '00:06:17','assets/song img/Wine.jpeg', 'assets/music/Wine.mp3', 1,'2022-10-30'),
 ('Ghoomey', '00:03:51','assets/song img/Ghoomey.jpg', 'assets/music/Ghoomey.mp3', 1,'2022-10-23'),

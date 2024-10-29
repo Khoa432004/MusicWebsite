@@ -19,9 +19,13 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class SongController {
+	
     @Autowired
     private SongServices songService;
-
+    
+    @Autowired
+    private ArtistServices artistServices;
+    
     @GetMapping("/getSongDetails")
     @ResponseBody
     public ResponseEntity<?> getSongDetails(@RequestParam("songId") Integer songId) {
@@ -33,7 +37,10 @@ public class SongController {
             response.put("linkPath", song.getLinkPath());
             response.put("image", song.getImage());
             response.put("artistId", song.getArtistID());
-            System.out.print(song.getLinkPath());
+            
+            Artist artist = artistServices.getArtistById(song.getArtistID());
+            response.put("artistName", artist.getName());
+            
             return ResponseEntity.ok(response); // Trả về đối tượng JSON
         } else {
             return ResponseEntity.status(HttpStatus.NOT_FOUND)

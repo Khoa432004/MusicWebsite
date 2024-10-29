@@ -13,84 +13,84 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "song")
 public class Song {
-	
-	@Id
+
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "SongID")  // Ánh xạ tới cột SongID
-	private int SongID;
-	
-	@Column(name = "Title")    // Ánh xạ tới cột Title
-	private String title;
-	
-	@Column(name = "Duration") // Ánh xạ tới cột Duration
-	private LocalTime Duration;
+    @Column(name = "SongID")
+    private int songID;
 
-	@Column(name = "LinkPath") // Ánh xạ tới cột LinkPath
-	private String LinkPath;
-	
-	@Column(name = "Image")     // Ánh xạ tới cột Image
-	private String Image;
-	
-	@Column(name = "ArtistID")  // Ánh xạ tới cột ArtistID
-	private int ArtistID;
+    @Column(name = "Title")
+    private String title;
 
-	@Column(name = "ReleaseDate") // Ánh xạ tới cột ReleaseDate
-	private LocalDate ReleaseDate;
+    @Column(name = "Duration")
+    private LocalTime duration;
 
-	public int getSongID() {
-		return SongID;
-	}
+    @Column(name = "LinkPath")
+    private String linkPath;
 
-	public void setSongID(int songID) {
-		SongID = songID;
-	}
+    @Column(name = "Image")
+    private String image;
 
-	public String getTitle() {
-		return title;
-	}
+    @Column(name = "ArtistID")
+    private int artistID;
 
-	public void setTitle(String title) {
-		this.title = title;
-	}
+    @Column(name = "ReleaseDate")
+    private LocalDate releaseDate;
 
-	public LocalTime getDuration() {
-		return Duration;
-	}
+    // Getters and Setters
+    public int getSongID() {
+        return songID;
+    }
 
-	public void setDuration(LocalTime duration) {
-		Duration = duration;
-	}
+    public void setSongID(int songID) {
+        this.songID = songID;
+    }
 
-	public String getLinkPath() {
-		return LinkPath;
-	}
+    public String getTitle() {
+        return title;
+    }
 
-	public void setLinkPath(String linkPath) {
-		LinkPath = linkPath;
-	}
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
-	public String getImage() {
-		return Image;
-	}
+    public LocalTime getDuration() {
+        return duration;
+    }
 
-	public void setImage(String image) {
-		Image = image;
-	}
+    public void setDuration(LocalTime duration) {
+        this.duration = duration;
+    }
 
-	public int getArtistID() {
-		return ArtistID;
-	}
+    public String getLinkPath() {
+        return linkPath;
+    }
 
-	public void setArtistID(int artistID) {
-		ArtistID = artistID;
-	}
+    public void setLinkPath(String linkPath) {
+        this.linkPath = linkPath;
+    }
 
-	public LocalDate getReleaseDate() {
-		return ReleaseDate;
-	}
+    public String getImage() {
+        return image;
+    }
 
-	public void setReleaseDate(LocalDate releaseDate) {
-		ReleaseDate = releaseDate;
-	}
-	
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public int getArtistID() {
+        return artistID;
+    }
+
+    public void setArtistID(int artistID) {
+        this.artistID = artistID;
+    }
+
+    public LocalDate getReleaseDate() {
+        return releaseDate;
+    }
+
+    public void setReleaseDate(LocalDate releaseDate) {
+        this.releaseDate = releaseDate;
+    }
 }
