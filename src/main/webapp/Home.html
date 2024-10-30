@@ -61,22 +61,40 @@
                 </div>
             </div>
 			<!-- Hiển thị nếu người dùng chưa đăng nhập -->
-			<div sec:authorize="isAnonymous()">
+			<!-- <div sec:authorize="isAnonymous()"  class = "beforelogin">
 			    <div class="login">
 			        <img src="https://img.icons8.com/external-smashingstocks-glyph-smashing-stocks/66/FFFFFF/external-reviews-digital-marketing-smashingstocks-glyph-smashing-stocks-2.png"/>
 			        <h4>
 			        	<a href="Login.html" style="color: #ffff; text-decoration: none;">Log in</a>
 			        </h4>
+			        <img src="https://img.icons8.com/external-smashingstocks-glyph-smashing-stocks/66/FFFFFF/external-reviews-digital-marketing-smashingstocks-glyph-smashing-stocks-2.png"/>
+			        <h4>
+			        	<a href="Register.html" style="color: #ffff; text-decoration: none;">Register</a>
+			        </h4>
 			    </div>
-			</div>
+			</div> -->
 			
 			<!-- Hiển thị nếu người dùng đã đăng nhập -->
-			<div sec:authorize="isAuthenticated()">
+			<div sec:authorize="isAuthenticated()" class = "afterlogin">
+				<div class="profile">
+					<img class ="img-welcome" src="https://img.icons8.com/external-smashingstocks-glyph-smashing-stocks/66/FFFFFF/external-reviews-digital-marketing-smashingstocks-glyph-smashing-stocks-2.png"/>
+					<h4 class ="Welcome" >Welcome user: Khoa</h4>
+					
+			        <img class ="img-logout" src="https://img.icons8.com/external-smashingstocks-glyph-smashing-stocks/66/FFFFFF/external-reviews-digital-marketing-smashingstocks-glyph-smashing-stocks-2.png"/>
+			        <h4>
+			        	<a href="Home.html" class ="logout" style="color: #ffff;">Log out</a>
+			        </h4>
+			        
+			        <img class ="img-logout" src="https://img.icons8.com/external-smashingstocks-glyph-smashing-stocks/66/FFFFFF/external-reviews-digital-marketing-smashingstocks-glyph-smashing-stocks-2.png"/>
+			        <h4>
+			        	<a href="ChangePass.html" class ="change-password" style="color: #ffff;">Change Password</a>
+			        </h4>
+			    </div>
 			    <div class="profile-picture">
 			        <img src="assets/image/myphoto.jpeg" alt="Profile Picture"/>
 			    </div>
 			</div>
-
+			
             
         </div>
 
@@ -387,17 +405,6 @@
 			        </div>
 			    </div>
 			</div>
-
-			
-
-			<script>
-				function closeAudio() {
-					const audioPlayer = document.getElementById('audio-player');
-					audioPlayer.pause();
-					audioPlayer.currentTime = 0;
-				}
-			</script>
-
 
 			<!-- Popular Artist -->
             <section class="popular-artists">
@@ -1397,36 +1404,11 @@
                 </div>
             </div>
         </div>
-        
-        <script>
-			function loadSongDetails(songId) {
-			    fetch(`/getSongDetails?songId=${songId}`)
-			        .then(response => {
-			            if (!response.ok) {
-			                throw new Error('Network response was not ok');
-			            }
-			            return response.json();
-			        })
-			        .then(data => {
-			        	
-			            document.getElementById('songTitle').innerText = data.title;
-			            document.getElementById('songArtist').innerText = data.artistName;
-			            document.getElementById('songImage').src = data.image;
-			            document.getElementById('audioSource').src = data.linkPath;
-						
-			            
-			            const audioPlayer = document.getElementById('audio-player');
-			            audioPlayer.load();
-			            audioPlayer.play();
-			        })
-			        .catch(error => console.error('Error fetching song details:', error));
-			    window.location.hash = '#play-bar';
-			}
-		</script>
 		
         <!-- Queue Menu Ends -->
         
     </main>
     <!-- Section Ends -->
+    <script src="assets/javascript/Home.js"></script>
 </body>
 </html>

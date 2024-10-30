@@ -133,7 +133,7 @@ body{
     display: flex;
     align-items: center;
     margin-left: 4rem;
-    gap: 2px;
+    gap: 20px;
     letter-spacing: 2px;
     font-family: "Sansita Swashed", sans-serif;
     cursor: pointer; 
@@ -148,9 +148,78 @@ body{
     animation: fade 1s ease-in-out infinite alternate;
 }
 
-/* .right-nav .profile-picture{
+.afterlogin {
+    display: flex;
+    align-items: center;
+    
+}
+
+.afterlogin .profile img{
+    width: 30px;
+    cursor: pointer;
+}
+
+.profile{
+    display: flex;
+    align-items: center;
+    margin-left: 4rem;
+    gap: 2px;
+    letter-spacing: 2px;
+    font-family: "Sansita Swashed", sans-serif;
+    cursor: pointer; 
+    text-align: left;
+}
+
+h4.Welcome{
+	display: flex;
+    align-items: center;
+    margin-left: 4rem;
+    gap: 2px;
+    letter-spacing: 2px;
+    font-family: "Sansita Swashed", sans-serif;
+    cursor: pointer; 
+    text-align: left;
+    margin-left: 0;
+}
+
+.logout,
+.change-password{
 	display: none;
-} */
+	text-decoration: none;
+}
+
+.profile .img-logout{
+	display: none;
+}
+
+.profile-picture img {
+    transition: transform 0.4s;
+}
+
+.profile-picture{
+	align-items: flex-start;
+	position: relative;
+	flex-direction: column;
+    align-items: center;
+    margin-right:30px;
+    margin-left:30px;
+}
+
+.profile-picture:hover + .profile .img-welcome,
+.profile-picture:hover + .profile h4.Welcome {
+    display: none;
+}
+
+.profile-picture:hover + .profile .img-logout,
+.profile-picture:hover + .profile h4 a.logout,
+.profile-picture:hover + .profile h4 a.change-password {
+    display: flex;
+}
+
+
+.profile-picture:hover img {
+    transform: scale(0.7);
+}
 
 /* ---------Search-Bar---------- */
 

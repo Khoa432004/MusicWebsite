@@ -41,7 +41,7 @@ public class SongController {
             Artist artist = artistServices.getArtistById(song.getArtistID());
             response.put("artistName", artist.getName());
             
-            return ResponseEntity.ok(response); // Trả về đối tượng JSON
+            return ResponseEntity.ok(response);
         } else {
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
                                  .body("Song not found with ID: " + songId);
