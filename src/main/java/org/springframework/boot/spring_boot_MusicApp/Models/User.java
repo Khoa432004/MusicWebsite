@@ -19,23 +19,23 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "UserID")
-	private int UserID;
+	private int userID;
     
     @Column(name = "Email")
 	private String email;
 	
     @Column(name = "UserName")
-	private String Username;
+	private String username;
 	
     @Column(name = "Password")
-	private String Password;
+	private String password;
 
 	public int getUserID() {
-		return UserID;
+		return userID;
 	}
 
 	public void setUserID(int userID) {
-		UserID = userID;
+		this.userID = userID;
 	}
 
 	public String getEmail() {
@@ -43,22 +43,24 @@ public class User {
 	}
 
 	public void setEmail(String email) {
-		email = email;
+		this.email = email;
 	}
 
 	public String getUsername() {
-		return Username;
+		return username;
 	}
 
 	public void setUsername(String username) {
-		Username = username;
+		this.username = username;
 	}
 
 	public String getPassword() {
-		return Password;
+		return password;
 	}
 
 	public void setPassword(String password) {
-		Password = password;
+		this.password = password;
 	}
+
+
 }

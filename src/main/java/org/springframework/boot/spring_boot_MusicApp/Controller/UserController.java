@@ -19,10 +19,6 @@ public class UserController {
     @ResponseBody
     public ResponseEntity<String> registerUser(@RequestBody User user) {
         try {
-        	System.out.println("Received User: " + user);
-        	System.out.println("Username: " + user.getUsername());
-            System.out.println("email: " + user.getEmail());
-            System.out.println("Password: " + user.getPassword());
             userService.registerUser(user);
             return ResponseEntity.ok("User registered successfully.");
         } catch (Exception e) {
