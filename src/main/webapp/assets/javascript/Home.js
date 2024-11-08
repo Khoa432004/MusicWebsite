@@ -3,6 +3,7 @@ const imgWelcome = document.querySelector('.img-welcome');
 const welcomeText = document.querySelector('.Welcome');
 const imgLogout = document.querySelectorAll('.img-logout');
 const logoutLinks = document.querySelectorAll('.logout, .change-password');
+const logout = document.querySelectorAll('.logout');
 
 let timeout;
 
@@ -60,3 +61,28 @@ function closeAudio() {
 	audioPlayer.currentTime = 0;
 }
 
+document.getElementById("logout-form").addEventListener("click", function (event) {
+    event.preventDefault();
+    
+	fetch("/logout_user", {
+	    method: "POST",
+	    headers: {
+	        "Content-Type": "application/x-www-form-urlencoded"
+	    },
+	})
+	.then(response => {
+	    console.log(response.status);
+	    return response.text().then(text => {
+	        if (response.ok) {
+	            alert("Logout successful!");
+	            window.location.href = "/Home";
+	        } else {
+	            alert(text);
+	        }
+	    });
+	})
+	.catch(error => {
+	    console.error('Error during logout:', error);
+	});
+
+});

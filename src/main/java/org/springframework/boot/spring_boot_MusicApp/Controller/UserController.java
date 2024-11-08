@@ -44,7 +44,7 @@ public class UserController {
                 Optional<User> user = userService.getUserByEmail(email);
                 if (user.isPresent()) {
                     session.setAttribute("UserName", user.get().getUsername());
-                    System.out.print(session.getAttribute("UserName").toString());
+                    session.setAttribute("UserEmail", user.get().getEmail());
                 }
                 return ResponseEntity.ok("Login successful.");
             } else {
@@ -52,6 +52,29 @@ public class UserController {
             }
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("An error occurred during login: " + e.getMessage());
+        }
+    }
+    
+    @PostMapping("/logout_user")
+    @ResponseBody
+    public ResponseEntity<String> logout_User() {
+        try {
+            HttpSession session = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest().getSession(false);
+            
+            if (session != null) {
+                String UserName = (String) session.getAttribute("UserName");
+                
+                if (UserName != null) {
+                    session.invalidate();
+                    return ResponseEntity.ok("Logout successful.");
+                } else {
+                    return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Cannot find account");
+                }
+            } else {
+                return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("No session found");
+            }
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("An error occurred during logout: " + e.getMessage());
         }
     }
 }
