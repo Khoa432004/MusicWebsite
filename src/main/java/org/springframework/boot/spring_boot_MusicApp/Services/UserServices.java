@@ -30,4 +30,23 @@ public class UserServices {
 		Optional<User> user = userRepository.getUserByEmail(email);
 		return user;
 	}
+	
+	public void ChangePasswordUser(User user,String Oldpass) throws Exception {
+        Optional<User> existingUserOpt = userRepository.findByEmail(user.getEmail());
+        
+        	
+        existingUserOpt.map(existingUser -> {
+        	System.out.println(existingUser.getPassword());
+        	System.out.println(user.getPassword());
+        	if (!Oldpass.equals(existingUser.getPassword())) {
+                throw new RuntimeException("Current password is incorrect.");
+            }
+        	else
+        	{
+	            existingUser.setPassword(user.getPassword());
+	            existingUser.setUsername(user.getUsername());
+	            return userRepository.save(existingUser);
+        	}
+        }).orElseThrow(() -> new RuntimeException("User not found"));
+    }
 }

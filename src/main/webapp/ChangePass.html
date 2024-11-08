@@ -1,10 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/schema/spring-security"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.thymeleaf.org/schema/thymeleaf http://www.thymeleaf.org/schema/thymeleaf-spring5.xsd
+                          http://www.thymeleaf.org/schema/spring-security http://www.thymeleaf.org/schema/spring-security.xsd">
+
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+    <title>Change Password - R.K.S Studio</title>
+    <link rel="stylesheet" href="assets/css/ChangePass.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 </head>
 <body>
-	
+    <div class="changepass-container">
+        <div class="changepass-box">
+            <img src="assets/image/logo.jpg" alt="Logo" class="logo">
+            <h2>Change Your Password</h2>
+            <form id="changePassword" method="post">
+<!--                 <div class="input-group">
+				    <i class="fa fa-envelope"></i>
+				    <input type="email" name="email" id="email" placeholder="Your Email" th:value="${session.UserEmail}" required readonly />
+				</div> -->
+                <div class="input-group">
+                    <i class="fa fa-user"></i>
+                    <input type="text" name="username" placeholder="Your Username" required />
+                </div>
+                <div class="input-group">
+                    <i class="fa fa-lock"></i>
+                    <input type="password" name="password" placeholder="Current Password" required />
+                </div>
+                <div class="input-group">
+                    <i class="fa fa-lock"></i>
+                    <input type="password" name="NewPassword" placeholder="New Password" required />
+                </div>
+                <div class="input-group">
+                    <i class="fa fa-lock"></i>
+                    <input type="password" name="confirmNewPassword" placeholder="Confirm New Password" required />
+                </div>
+                <button type="submit" class="changepass-btn">
+                    <i class="fa fa-key"></i> CHANGE PASSWORD
+                </button>
+                <div class="links">
+                    <a href="Home">Back to Profile</a>
+                </div>
+           </form>
+        </div>
+    </div>
+    <script src="assets/javascript/ChangePass.js"></script>
 </body>
+
 </html>

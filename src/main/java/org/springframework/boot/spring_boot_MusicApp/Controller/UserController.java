@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,12 +32,34 @@ public class UserController {
         }
     }
     
+    @PostMapping("/changepassword_user")
+    @ResponseBody
+    public ResponseEntity<String> changePasswordUser(@RequestBody Map<String, Object> request) {
+    	
+    	HttpSession session = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest().getSession(false);
+        Map<String, String> userMap = (Map<String, String>) request.get("user");
+        
+        User user = new User();
+        user.setUsername(userMap.get("username"));
+        user.setEmail(session.getAttribute("UserEmail").toString());
+        user.setPassword(userMap.get("password"));
+
+        String oldpass = (String) request.get("oldpass");
+        try {
+            userService.ChangePasswordUser(user,oldpass);
+            session.invalidate();
+            return ResponseEntity.ok("Change password successfully.");
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+        }
+    }
+    
     @PostMapping("/login_user")
     @ResponseBody
     public ResponseEntity<String> loginUser(@RequestParam("email") String email,
                                             @RequestParam("password") String password) {
     	try {
-            HttpSession session = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest().getSession(true); // Tạo session nếu chưa có
+            HttpSession session = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest().getSession(true);
 
             boolean isAuthenticated = userService.authenticate(email, password);
 
@@ -77,5 +100,19 @@ public class UserController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("An error occurred during logout: " + e.getMessage());
         }
     }
+    
+    @PutMapping("/update")
+    @ResponseBody
+    public ResponseEntity<String> updateUser(@RequestBody User user,@RequestBody String Oldpass) {
+        try {
+        	userService.ChangePasswordUser(user,Oldpass);
+            return ResponseEntity.ok("User updated successfully.");
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("An error occurred during update: " + e.getMessage());
+        }
+    }
+    
 }
 
