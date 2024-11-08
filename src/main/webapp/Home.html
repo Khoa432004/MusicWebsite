@@ -61,7 +61,7 @@
                 </div>
             </div>
 			<!-- Hiển thị nếu người dùng chưa đăng nhập -->
-			<!-- <div sec:authorize="isAnonymous()"  class = "beforelogin">
+			<div th:if="${session.UserName == null}" class="beforelogin">
 			    <div class="login">
 			        <img src="https://img.icons8.com/external-smashingstocks-glyph-smashing-stocks/66/FFFFFF/external-reviews-digital-marketing-smashingstocks-glyph-smashing-stocks-2.png"/>
 			        <h4>
@@ -72,13 +72,13 @@
 			        	<a href="Register.html" style="color: #ffff; text-decoration: none;">Register</a>
 			        </h4>
 			    </div>
-			</div> -->
+			</div>
 			
 			<!-- Hiển thị nếu người dùng đã đăng nhập -->
-			<div sec:authorize="isAuthenticated()" class = "afterlogin">
+			<div th:if="${session.UserName != null}" class="afterlogin">
 				<div class="profile">
 					<img class ="img-welcome" src="https://img.icons8.com/external-smashingstocks-glyph-smashing-stocks/66/FFFFFF/external-reviews-digital-marketing-smashingstocks-glyph-smashing-stocks-2.png"/>
-					<h4 class ="Welcome" >Welcome user: Khoa</h4>
+					<h4 class="Welcome">Welcome user: <span th:text="${session.UserName}"></span></h4>
 					
 			        <img class ="img-logout" src="https://img.icons8.com/external-smashingstocks-glyph-smashing-stocks/66/FFFFFF/external-reviews-digital-marketing-smashingstocks-glyph-smashing-stocks-2.png"/>
 			        <h4>
@@ -94,7 +94,6 @@
 			        <img src="assets/image/myphoto.jpeg" alt="Profile Picture"/>
 			    </div>
 			</div>
-			
             
         </div>
 

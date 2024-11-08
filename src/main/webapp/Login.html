@@ -4,24 +4,24 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.thymeleaf.org/schema/thymeleaf http://www.thymeleaf.org/schema/thymeleaf-spring5.xsd
                           http://www.thymeleaf.org/schema/spring-security http://www.thymeleaf.org/schema/spring-security.xsd">
-                          
 <head>
     <title>Login - R.K.S Studio</title>
-    <link rel="stylesheet" href="assets/css/Login.css" />
+    <link rel="stylesheet" href="/assets/css/Login.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <div class="login-container">
         <div class="login-box">
-            <img src="assets/image/logo.jpg" alt="Logo" class="logo">
+            <img src="/assets/image/logo.jpg" alt="Logo">
             <h2>Welcome To Musics.</h2>
-            <form th:action="@{/login}" method="post">
+            <form id="login-form">
                 <div class="input-group">
                     <i class="fa fa-envelope"></i>
-                    <input type="email" name="email" placeholder="Your Email" required />
+                    <input type="email" id="email" name="email" placeholder="Your Email" required />
                 </div>
                 <div class="input-group">
                     <i class="fa fa-lock"></i>
-                    <input type="password" name="password" placeholder="Your Password" required />
+                    <input type="password" id="password" name="password" placeholder="Your Password" required />
                 </div>
                 <button type="submit" class="login-btn">
                     <i class="fa fa-paper-plane"></i> LOGIN
@@ -30,9 +30,13 @@
                     <a href="Register.html">Create Account</a>
                     <a href="#">Forget Password?</a>
                 </div>
+                <!-- Hiển thị lỗi nếu có -->
+                <div id="error-message" class="error-message" style="display: none;">
+                    <p>Invalid email or password.</p>
+                </div>
             </form>
         </div>
     </div>
+	<script src="/assets/javascript/Login.js"></script>
 </body>
 </html>
-

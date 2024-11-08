@@ -3,6 +3,7 @@ package org.springframework.boot.spring_boot_MusicApp.Config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.ViewResolver;
+import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.thymeleaf.spring6.SpringTemplateEngine;
 import org.thymeleaf.spring6.templateresolver.SpringResourceTemplateResolver;
@@ -23,6 +24,10 @@ public class WebConfig {
         SpringTemplateEngine templateEngine = new SpringTemplateEngine();
         templateEngine.setTemplateResolver(templateResolver());
         return templateEngine;
+    }
+    
+    public void configureViewResolvers(ViewResolverRegistry registry) {
+        registry.jsp("/webapp/", ".html");
     }
 
 }

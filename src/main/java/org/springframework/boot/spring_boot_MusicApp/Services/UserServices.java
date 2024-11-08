@@ -19,4 +19,15 @@ public class UserServices {
         }
         userRepository.save(user);
     }
+    
+    public boolean authenticate(String email, String password) {
+        Optional<User> user = userRepository.findByEmail(email);
+        return user.isPresent() && user.get().getPassword().equals(password);
+    }
+
+	public Optional<User> getUserByEmail(String email) {
+		// TODO Auto-generated method stub
+		Optional<User> user = userRepository.getUserByEmail(email);
+		return user;
+	}
 }
