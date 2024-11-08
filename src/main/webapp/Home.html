@@ -37,7 +37,7 @@
             <!-- FAVOURITES -->
             <div class="fav">
                 <img src="https://img.icons8.com/external-smashingstocks-glyph-smashing-stocks/66/FFFFFF/external-reviews-digital-marketing-smashingstocks-glyph-smashing-stocks-2.png"/>
-                <h4>FAVOURITES</h4>
+                <a th:href="${session.UserName == null ? 'Login.html' : 'SinglePlaylistScreen.html'}" id="favourites">FAVOURITES</a>
             </div>
         </div>
 

@@ -117,7 +117,13 @@ body{
     animation: fade 1s ease-in-out infinite alternate;
 }
 
-
+#favourites{
+	font-size: 1em;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    color : white;
+}
 
 
 /* --------Right Nav-------- */

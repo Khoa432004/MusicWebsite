@@ -30,7 +30,7 @@
             </div>
             <!-- Brand Name -->
             <div class="name">
-                <a href="Home.html" style="text-decoration: none; color: white; ">
+                <a href="Home" style="text-decoration: none; color: white; ">
                     <h2>R.K.S</h2>
                     <h5>Studio</h5>
                 </a>
@@ -39,7 +39,7 @@
             <!-- FAVOURITES -->
             <div class="fav">
                 <img src="https://img.icons8.com/external-smashingstocks-glyph-smashing-stocks/66/FFFFFF/external-reviews-digital-marketing-smashingstocks-glyph-smashing-stocks-2.png"/>
-                <h4>FAVOURITES</h4>
+                <a href="SinglePlaylistScreen.html" id="favourites">FAVOURITES</a>
             </div>
         </div>
 
@@ -64,9 +64,22 @@
             </div>
 
             <!-- Profile -->
-            <div class="profile-picture">
-                <img src="assets/image/myphoto.jpeg">
-            </div>
+            <div th:if="${session.UserName != null}" class="afterlogin">
+				<div class="profile">
+			        <img class ="img-logout" src="https://img.icons8.com/external-smashingstocks-glyph-smashing-stocks/66/FFFFFF/external-reviews-digital-marketing-smashingstocks-glyph-smashing-stocks-2.png"/>
+			        <h4>
+			        	<a id="logout-form" class ="logout" style="color: #ffff;">Log out</a>
+			        </h4>
+			        
+			        <img class ="img-logout" src="https://img.icons8.com/external-smashingstocks-glyph-smashing-stocks/66/FFFFFF/external-reviews-digital-marketing-smashingstocks-glyph-smashing-stocks-2.png"/>
+			        <h4>
+			        	<a href="ChangePass.html" class ="change-password" style="color: #ffff;">Change Password</a>
+			        </h4>
+			    </div>
+			    <div class="profile-picture">
+			        <img src="assets/image/myphoto.jpeg" alt="Profile Picture"/>
+			    </div>
+			</div>
         </div>
 
         <!-- Responsive Dropdown Menu -->
@@ -151,7 +164,9 @@
                         <div>
                             <img src="assets/image/hindi1.jpg">
                             <div class="play-btn">
-                                <i class="fas fa-play"></i>
+                                <a href="javascript:void(0);" onclick="loadSongDetails(12)">
+						            <i class="fas fa-play"></i>
+						        </a>
                             </div>
                         </div>
                         <div>
@@ -564,266 +579,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- recently played section -->
-                <div class="similar">
-                    <div class="section-heading recent-played">
-                        <h1>Recently Played</h1>
-                        <div class="view-all-button">
-                            View All
-                        </div>
-                    </div>
-                    
-                    <div class="list">
-                        <!-- item -->
-                        <div class="playlist-item">
-                            <div class="left" style="width: 60%;">
-                                <div>
-                                    01
-                                </div>
-                                <div>
-                                    <img src="assets/image/hindi4.jpg">
-                                    <div class="play-btn">
-                                        <i class="fas fa-play"></i>
-                                    </div>
-                                </div>
-                                <div>
-                                    <h5>
-                                        U turn
-                                    </h5>
-                                    <p>
-                                        Raghav
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="right">
-                                <div>
-                                    <i class="far fa-heart"></i>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- item -->
-                        <div class="playlist-item">
-                            <div class="left" style="width: 60%;">
-                                <div>
-                                    02
-                                </div>
-                                <div>
-                                    <img src="assets/image/hindi5.jpg">
-                                    <div class="play-btn">
-                                        <i class="fas fa-play"></i>
-                                    </div>
-                                </div>
-                                <div>
-                                    <h5>
-                                        Bairiya
-                                    </h5>
-                                    <p>
-                                        Arijit Singh
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="right">
-                                <div>
-                                    <i class="far fa-heart"></i>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- item -->
-                        <div class="playlist-item">
-                            <div class="left" style="width: 60%;">
-                                <div>
-                                    03
-                                </div>
-                                <div>
-                                    <img src="assets/image/hindi6.jpg">
-                                    <div class="play-btn">
-                                        <i class="fas fa-play"></i>
-                                    </div>
-                                </div>
-                                <div>
-                                    <h5>
-                                        Ghoomey
-                                    </h5>
-                                    <p>
-                                        Anup Roy
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="right">
-                                <div>
-                                    <i class="far fa-heart"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- item -->
-                        <div class="playlist-item">
-                            <div class="left" style="width: 60%;">
-                                <div>
-                                    04
-                                </div>
-                                <div>
-                                    <img src="assets/image/latest1.jpeg">
-                                    <div class="play-btn">
-                                        <i class="fas fa-play"></i>
-                                    </div>
-                                </div>
-                                <div>
-                                    <h5>
-                                        Anti-Hero
-                                    </h5>
-                                    <p>
-                                        Taylor Swift
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="right">
-                                <div>
-                                    <i class="far fa-heart"></i>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- item -->
-                        <div class="playlist-item">
-                            <div class="left" style="width: 60%;">
-                                <div>
-                                    05
-                                </div>
-                                <div>
-                                    <img src="assets/image/latest2.jpeg">
-                                    <div class="play-btn">
-                                        <i class="fas fa-play"></i>
-                                    </div>
-                                </div>
-                                <div>
-                                    <h5>
-                                        Wine
-                                    </h5>
-                                    <p>
-                                        Adele
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="right">
-                                <div>
-                                    <i class="far fa-heart"></i>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- item -->
-                        <div class="playlist-item">
-                            <div class="left" style="width: 60%;">
-                                <div>
-                                    06
-                                </div>
-                                <div>
-                                    <img src="assets/image/latest3.jpg">
-                                    <div class="play-btn">
-                                        <i class="fas fa-play"></i>
-                                    </div>
-                                </div>
-                                <div>
-                                    <h5>
-                                        Love
-                                    </h5>
-                                    <p>
-                                        Justin Bieber
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="right">
-                                <div>
-                                    <i class="far fa-heart"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- item -->
-                        <div class="playlist-item">
-                            <div class="left" style="width: 60%;">
-                                <div>
-                                    07
-                                </div>
-                                <div>
-                                    <img src="assets/image/latest4.jpg">
-                                    <div class="play-btn">
-                                        <i class="fas fa-play"></i>
-                                    </div>
-                                </div>
-                                <div>
-                                    <h5>
-                                        The 30th
-                                    </h5>
-                                    <p>
-                                        Billie Eilish
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="right">
-                                <div>
-                                    <i class="far fa-heart"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- item -->
-                        <div class="playlist-item">
-                            <div class="left" style="width: 60%;">
-                                <div>
-                                    08
-                                </div>
-                                <div>
-                                    <img src="assets/image/latest5.jpeg">
-                                    <div class="play-btn">
-                                        <i class="fas fa-play"></i>
-                                    </div>
-                                </div>
-                                <div>
-                                    <h5>
-                                        Statellite
-                                    </h5>
-                                    <p>
-                                        Khalid
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="right">
-                                <div>
-                                    <i class="far fa-heart"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- item -->
-                        <div class="playlist-item">
-                            <div class="left" style="width: 60%;">
-                                <div>
-                                    09
-                                </div>
-                                <div>
-                                    <img src="assets/image/latest6.jpeg">
-                                    <div class="play-btn">
-                                        <i class="fas fa-play"></i>
-                                    </div>
-                                </div>
-                                <div>
-                                    <h5>
-                                        Loser
-                                    </h5>
-                                    <p>
-                                        Charli Puth 
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="right">
-                                <div>
-                                    <i class="far fa-heart"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </aside>
     </main> 
@@ -1177,78 +932,90 @@
         </div>
 
     </div>
+	<!-- Play music -->
+	<div id="play-bar">
+		<a href="#" onclick="closeAudio()"><button>Close</button></a>
 
-    <!-- Music Player -->
+		<div class="play-bar-content">
+			<div class="active-song-description">
+				<div id="song-image">
+					<img id="songImage" src="assets/image/marshmello.jpg"
+						alt="marshmello">
+				</div>
 
-    <footer>
-        <div class="active-song-description">
-            
-            <div id="song-image">
-                <img src="assets/image/hindi1.jpg">
-            </div>
-            
-            <div class="song-desc">
-                <div>
-                    <marquee behavior="scroll" direction="left" scrollamount="15" scrolldelay="500"><h3>Jai Shree RAM</h3></marquee>
-                </div>
-                <div>
-                    Ajay Atul
-                </div>
-            </div>
-                
-            <div class="heart-and-ban-icon">
-                <span>
-                    <i class="far fa-heart"></i>
-                </span>
-                <span>
-                    <i class="fas fa-ban"></i>
-                </span>
-            </div>
-        </div>
-        
-        <div class="player">
-            <div class="controls">
-                <div><i class="fas fa-random"></i></div>
-                <div><i class="fas fa-step-backward"></i></div>
-                <div><i class="fas fa-pause-circle"></i></div>
-                <div><i class="fas fa-step-forward"></i></div>
-                <div><i class="fas fa-redo"></i></div>
-            </div>
-            
-            <div id="slider">
-                
-                <div class="time">
-                    0:39
-                </div>
-                <div class="slidecontainer">
-                    <input type="range" min="0" max="100" value="0" class="slider" id="myRange">
-                </div>
-                
-                <div class="time">
-                    4:44
-                </div>
-            </div>
-        </div>
-        
-        <div class="extras">
-            <div>
-                <i class="fas fa-list-ul"></i>
-            </div>
-            <div>
-                <i class="fas fa-laptop"></i>
-            </div>
-            <div>
-                <i class="fas fa-volume-up"></i>
-            </div>
-            <div class="slidecontainer" style="max-width:5rem;">
-                <input type="range" min="0" max="100" value="0" class="slider" id="myRange" style="margin-top:0px;">
-            </div>
-            <div>
-                <i class="fas fa-expand-alt"></i>
-            </div>
-        </div>
-    </footer>
+				<div class="song-desc">
+					<div>
+						<marquee behavior="scroll" direction="left" scrollamount="15"
+							scrolldelay="500">
+							<h3 id="songTitle">Happier</h3>
+						</marquee>
+					</div>
+					<div id="songArtist">Marshmello</div>
+				</div>
 
+				<div class="heart-and-ban-icon">
+					<span><i class="far fa-heart"></i></span>
+				</div>
+			</div>
 
+			<div class="player">
+				<audio id="audio-player" controls class="audio">
+					<source id="audioSource" src="assets/music/Happier.mp3"
+						type="audio/mp3" class="sources">
+				</audio>
+			</div>
+
+			<!-- <div class="player">
+						<div class="controls">
+							<div>
+								<i class="fas fa-random"></i>
+							</div>
+							<div>
+								<i class="fas fa-step-backward"></i>
+							</div>
+							<div>
+								<i class="fas fa-pause-circle"></i>
+							</div>
+							<div>
+								<i class="fas fa-step-forward"></i>
+							</div>
+							<div>
+								<i class="fas fa-redo"></i>
+							</div>
+						</div>
+
+						<div id="slider">
+
+							<div class="time">0:01</div>
+							<div class="slidecontainer">
+								<input type="range" min="0" max="100" value="1" class="slider"
+									id="myRange">
+							</div>
+
+							<div class="time">3:50</div>
+						</div>
+					</div> -->
+
+			<div class="extras">
+				<div>
+					<i class="fas fa-list-ul"></i>
+				</div>
+				<div>
+					<i class="fas fa-laptop"></i>
+				</div>
+				<!-- 			            <div>
+			                <i class="fas fa-volume-up"></i>
+			            </div> -->
+				<!-- 			            <div class="slidecontainer" style="max-width: 5rem;">
+			                <input type="range" min="0" max="100" value="15" class="slider" id="myRange" style="margin-top: 0px;">
+			            </div> -->
+				<div>
+					<i class="fas fa-expand-alt"></i>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="assets/javascript/SinglePlaylistScreen.js"></script>
 </body>
 </html>
