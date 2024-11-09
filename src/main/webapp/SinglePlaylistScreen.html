@@ -505,16 +505,16 @@
                 
                 <div class="section-heading" style="margin-top: 0px;">
                     <h1>Similar Artists</h1>
-                    <div class="view-all-button">
-                        View All
+                    <div class="view-all-button" id="addPlaylistBtn">
+                        Add Playlist
                     </div>
                 </div>
                 
-                <div class="list">
-                    <!-- item1 -->
+                <div class="list" id="playlistList">
+<!--                     item1
                     <div class="list-item">
                         <div>
-                            <img src="assets/image/latest1.jpeg">
+                            <img src="assets/image/Playlist.webp">
                         </div>
                         <div style="position: absolute; left:120px;">
                             <h5>
@@ -532,57 +532,25 @@
                                 3:50
                             </p>
                         </div>
-                    </div>
-                    <!-- item2 -->
-                    <div class="list-item">
-                        <div>
-                            <img src="assets/image/latest2.jpeg">
-                        </div>
-                        <div style="position: absolute; left:120px;">
-                            <h5>
-                                Wine
-                            </h5>
-                            <p class="author-name">
-                                Adele
-                            </p>
-                        </div>
-                        <div class="extra">
-                            <div>
-                                <i class="fas fa-ellipsis-h"></i>
-                            </div>
-                            <p class="author-name">
-                                4:10
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- item3 -->
-                    <div class="list-item">
-                        <div>
-                            <img src="assets/image/hindi3.jpeg">
-                        </div>
-                        <div style="position: absolute; left:120px;">
-                            <h5>
-                                Company
-                            </h5>
-                            <p class="author-name">
-                                Emiway
-                            </p>
-                        </div>
-                        <div class="extra">
-                            <div>
-                                <i class="fas fa-ellipsis-h"></i>
-                            </div>
-                            <p class="author-name">
-                                3:24
-                            </p>
-                        </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </aside>
     </main> 
-
+	<!-- Modal add playlist -->
+	<div id="myModal" class="modal">
+	    <div class="modal-content">
+	        <span class="close" id="closeModal" style="color:black">&times;</span>
+	        <h2 style="color:black">Add Playlist</h2>
+	        <form id="addPlaylistForm">
+	            <label for="playlistName" style="color:black">Name:</label>
+	            <input type="text" id="playlistName" name="playlistName" placeholder="Please enter your playlist name" required>
+	            <label for="playlistName" style="color:black">Description:</label>
+	            <input type="text" id="playlistDescription" name="playlistDescription"  placeholder="Please enter your playlist description" required>
+	            <button type="submit">Create Playlist</button>
+	        </form>
+	    </div>
+	</div>
     <!-- Queue Menu After 900px -->
     <div class="play-button">
         <a href="#play-bar6"><i class="fa-solid fa-rectangle-list" style="border:none"></i></a>

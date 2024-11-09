@@ -13,41 +13,49 @@ public class Playlist {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "PlaylistID")
-	private int PlaylistID;
+	private int playlistID;
 	
 	@Column(name = "UserID")
-	private int UserID;
+	private int userID;
 	
 	@Column(name = "Name")
-	private String Name;
+	private String name;
 	
 	@Column(name = "Description")
-	private String Description;
-	
+	private String description;
+
 	public int getPlaylistID() {
-		return PlaylistID;
+		return playlistID;
 	}
+
 	public void setPlaylistID(int playlistID) {
-		PlaylistID = playlistID;
+		this.playlistID = playlistID;
 	}
+
 	public int getUserID() {
-		return UserID;
+		return userID;
 	}
+
 	public void setUserID(int userID) {
-		UserID = userID;
+		this.userID = userID;
 	}
+
 	public String getName() {
-		return Name;
+		return name;
 	}
+
 	public void setName(String name) {
-		Name = name;
+		this.name = name;
 	}
+
 	public String getDescription() {
-		return Description;
+		return description;
 	}
+
 	public void setDescription(String description) {
-		Description = description;
+		this.description = description;
 	}
 	
+
 	
 }

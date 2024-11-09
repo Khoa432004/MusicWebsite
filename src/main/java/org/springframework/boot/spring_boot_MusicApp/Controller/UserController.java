@@ -68,6 +68,7 @@ public class UserController {
                 if (user.isPresent()) {
                     session.setAttribute("UserName", user.get().getUsername());
                     session.setAttribute("UserEmail", user.get().getEmail());
+                    session.setAttribute("UserID", user.get().getUserID());
                 }
                 return ResponseEntity.ok("Login successful.");
             } else {
