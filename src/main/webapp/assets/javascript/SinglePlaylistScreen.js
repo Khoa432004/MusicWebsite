@@ -155,3 +155,46 @@ fetch('/user/playlists')
     .catch(error => {
         console.error("Error fetching playlists:", error);
     });
+
+	document.addEventListener("DOMContentLoaded", function () {
+	    const favoriteContent = document.getElementById("favorite-content");
+	    const playlistContent = document.getElementById("playlist-content");
+
+	    const showFavoriteButton = document.getElementById("favourites");
+	    const showPlaylistButton = document.getElementById("playlists");
+
+	    function showFavoriteContent() {
+	        favoriteContent.style.display = "flex";
+	        playlistContent.style.display = "none";
+	    }
+
+	    function showPlaylistContent() {
+	        favoriteContent.style.display = "none";
+	        playlistContent.style.display = "flex";
+	    }
+
+	    showFavoriteButton.addEventListener("click", showFavoriteContent);
+	    showPlaylistButton.addEventListener("click", showPlaylistContent);
+
+	    showFavoriteContent();
+	});
+	
+	document.addEventListener("DOMContentLoaded", function () {
+	            const favoriteContent = document.getElementById("favorite-content");
+	            const playlistContent = document.getElementById("playlist-content");
+
+	            // Kiểm tra xem người dùng đã chọn nội dung nào trên trang trước đó
+	            const preferredContent = localStorage.getItem('preferredContent');
+
+	            if (preferredContent === 'favorite') {
+	                favoriteContent.style.display = "flex";
+	                playlistContent.style.display = "none";
+	            } else if (preferredContent === 'playlist') {
+	                favoriteContent.style.display = "none";
+	                playlistContent.style.display = "flex";
+	            } else {
+	                // Mặc định, hiển thị content yêu thích
+	                favoriteContent.style.display = "flex";
+	                playlistContent.style.display = "none";
+	            }
+	        });

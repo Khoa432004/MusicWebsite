@@ -37,7 +37,7 @@
             <!-- FAVOURITES -->
             <div class="fav">
                 <img src="https://img.icons8.com/external-smashingstocks-glyph-smashing-stocks/66/FFFFFF/external-reviews-digital-marketing-smashingstocks-glyph-smashing-stocks-2.png"/>
-                <a th:href="${session.UserName == null ? 'Login.html' : 'SinglePlaylistScreen.html'}" id="favourites">FAVOURITES</a>
+                <a th:href="${session.UserName == null ? 'Login.html' : 'SinglePlaylistScreen.html'}" id="favourites" onclick="storePreference('favorite')">FAVOURITES</a>
             </div>
         </div>
 
@@ -721,7 +721,9 @@
 
                     <div class="queue-options" id="queue-option-box">
                     	<input type="hidden" id="songID" value="12">
-                        <p><a href="SinglePlaylistScreen.html" style="color:#007bff; font-weight:bolder;">PLAYLISTS</a></p>
+                        <p>
+                        	<a th:href="${session.UserName == null ? 'Login.html' : 'SinglePlaylistScreen.html'}" style="color:#007bff; font-weight:bolder;" onclick="storePreference('playlist')">PLAYLISTS</a>
+                        </p>
                         <hr>
                         <p><a href="SinglePlaylistScreen.html" style="color:#007bff; font-weight:bolder;" id="addFavoriteBtn" onclick="addFavorite(event)">RECENT PLAYED</a></p>
                         <hr>

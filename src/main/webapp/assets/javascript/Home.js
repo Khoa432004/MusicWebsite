@@ -125,4 +125,7 @@ function addFavorite(event) {
     });
 }
 
-
+function storePreference(contentType) {
+    // Lưu trạng thái vào localStorage
+    localStorage.setItem('preferredContent', contentType);
+}

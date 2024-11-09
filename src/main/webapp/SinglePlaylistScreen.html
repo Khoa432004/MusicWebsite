@@ -39,7 +39,18 @@
             <!-- FAVOURITES -->
             <div class="fav">
                 <img src="https://img.icons8.com/external-smashingstocks-glyph-smashing-stocks/66/FFFFFF/external-reviews-digital-marketing-smashingstocks-glyph-smashing-stocks-2.png"/>
-                <a href="SinglePlaylistScreen.html" id="favourites">FAVOURITES</a>
+                <button id="favourites" style="background: none; 
+                                border: none; 
+                                color: white; 
+                                font-family: 'Sansita Swashed', sans-serif; 
+                                font-size: 1em; 
+                                font-weight: bold; 
+                                text-decoration: none; 
+                                cursor: pointer; 
+                                padding: 0;">
+				    FAVOURITES
+				</button>
+
             </div>
         </div>
 
@@ -117,41 +128,55 @@
         <!-- aside section 1 -->
         <aside class="aside section-1">
             
-            <div class="band">
-                <div class= "band-image">
-                </div>
-
-                <div class="band-detail">
-            
-                    <div class="descriptive-part">
-                        <div class="song-name-main">
-                            <h1>ColdPlay</h1>
-                        </div>
-                        <div class="followers">
-                            851 Followers
-                        </div>
-                        <p class="author">British Band</p>
-                        
-                        <p class="desc">
-                            Coldplay is a British music band that has enjoyed
-							continuous succeess since their inception in 1996 through
-							their intelligent and soulful songs. The band members are
-							Chris Martin (lead vocals), Jonny Buckland (lead guitar),
-							Guy Berryman (bass guitar) and Will Champion (drums).
-                        </p>
-                    </div>
-                    <div class="action-part">
-                        
-                        <div class="btns">
-                            <button class="glow-on-hover" type="button">Play All</button>
-                            <button>Follow</button>
-                        </div>
-                        <p>
-                            247 Tracks | 128 Albums
-                        </p>
-                    </div>
-                </div>
-            </div>
+            <div id="favorite-content" class="band" style="display: none;">
+			    <div class="band-image"></div>
+			    <div class="band-detail">
+			        <div class="descriptive-part">
+			            <div class="song-name-main">
+			                <h1>ColdPlay - Favorite</h1>
+			            </div>
+			            <div class="followers">
+			                Favorite
+			            </div>
+			            <p class="author"></p>
+			            <p class="desc">
+			                Đây là nội dung yêu thích của Coldplay, một ban nhạc nổi tiếng của Anh, nổi bật với các ca khúc sâu lắng và ý nghĩa.
+			            </p>
+			        </div>
+			        <div class="action-part">
+			            <div class="btns">
+			                <button class="glow-on-hover" type="button">Play All</button>
+			                <button>Follow</button>
+			            </div>
+			            <p>247 Tracks | 128 Albums</p>
+			        </div>
+			    </div>
+			</div>
+			
+			<div id="playlist-content" class="band" style="display: none;">
+			    <div class="band-image"></div>
+			    <div class="band-detail">
+			        <div class="descriptive-part">
+			            <div class="song-name-main">
+			                <h1>ColdPlay - Playlist</h1>
+			            </div>
+			            <div class="followers">
+			                Playlist
+			            </div>
+			            <p class="author"></p>
+			            <p class="desc">
+			                Đây là danh sách phát của Coldplay với nhiều bản hit nổi tiếng từ năm 1996, bao gồm các ca khúc được yêu thích trên toàn thế giới.
+			            </p>
+			        </div>
+			        <div class="action-part">
+			            <div class="btns">
+			                <button class="glow-on-hover" type="button">Play All</button>
+			                <button>Follow</button>
+			            </div>
+			            <p>247 Tracks | 128 Albums</p>
+			        </div>
+			    </div>
+			</div>
 
              
              <div class="playlist-items">
