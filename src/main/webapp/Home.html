@@ -720,9 +720,10 @@
                     </h4>
 
                     <div class="queue-options" id="queue-option-box">
+                    	<input type="hidden" id="songID" value="12">
                         <p><a href="SinglePlaylistScreen.html" style="color:#007bff; font-weight:bolder;">PLAYLISTS</a></p>
                         <hr>
-                        <p><a href="SinglePlaylistScreen.html" style="color:#007bff; font-weight:bolder;">RECENT PLAYED</a></p>
+                        <p><a href="SinglePlaylistScreen.html" style="color:#007bff; font-weight:bolder;" id="addFavoriteBtn" onclick="addFavorite(event)">RECENT PLAYED</a></p>
                         <hr>
                         <p><a href="#" style="color:red; font-weight:bolder;">CLOSE</a></p>
                     </div>
@@ -732,37 +733,39 @@
             <!-- Queue Content -->
 
             <div class="playlist-content">
-
+				
                 <!-- item1 -->
-                <div class=playlist-item>
-                    <div class="left-content">
-                        <!-- index -->
-                        <div style="margin-right:4px;">
-                            01
-                        </div>
-                        <div class="left-item">
-							<div class="play-button">
-                            	<a href="javascript:void(0);" onclick="loadSongDetails(12)">
-						            <i class="fas fa-play"></i>
-						        </a>
-                       		 </div>
-                            <img src="assets/image/hindi1.jpg">
-                        </div>
-                        
-                        <div>
-                            <h4>
-                                Shree RAM
-                            </h4>
-                            <p>
-                                Ajay Atul
-                            </p>
-                        </div>
-                    </div>
-                    <!-- like button -->
-                    <div class="right-content">
-                        <i class="far fa-heart"></i>
-                    </div>
-                </div>
+                <form id="addPlaylistForm">
+                    <div class=playlist-item data-song-id="12">
+	                    <div class="left-content">
+	                        <!-- index -->
+	                        <div style="margin-right:4px;">
+	                            01
+	                        </div>
+	                        <div class="left-item">
+								<div class="play-button">
+	                            	<a href="javascript:void(0);" onclick="loadSongDetails(12)">
+							            <i class="fas fa-play"></i>
+							        </a>
+	                       		 </div>
+	                            <img src="assets/image/hindi1.jpg">
+	                        </div>
+	                        
+	                        <div>
+	                            <h4>
+	                                Shree RAM
+	                            </h4>
+	                            <p>
+	                                Ajay Atul
+	                            </p>
+	                        </div>
+	                    </div>
+						<!-- Like button -->
+						<div class="right-content">
+						    <i class="far fa-heart" id="addFavoriteBtn" onclick="addFavorite(event)"></i>
+						</div>
+	                </div>
+	         	</form>
 
 
                 <!-- item2 -->
@@ -1103,7 +1106,7 @@
 
             <div class="playlist-content mt">
                 <!-- item1 -->
-                <div class=playlist-item>
+
                     <div class="left-content">
                         <!-- index -->
                         <div style="margin-right:4px;">
@@ -1125,7 +1128,7 @@
                         </div>
                     </div>
                     <!-- like button -->
-                    <div class="right-content">
+                    <div class="right-content" id="addFavoriteBtn">
                         <i class="far fa-heart"></i>
                     </div>
                 </div>

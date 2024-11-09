@@ -1,9 +1,7 @@
 package org.springframework.boot.spring_boot_MusicApp.Controller;
 
 import org.springframework.boot.spring_boot_MusicApp.Models.Playlist;
-import org.springframework.boot.spring_boot_MusicApp.Models.User;
 import org.springframework.boot.spring_boot_MusicApp.Services.PlaylistServices;
-import org.springframework.boot.spring_boot_MusicApp.Services.UserServices;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;

@@ -1,6 +1,6 @@
 package org.springframework.boot.spring_boot_MusicApp.Services;
+
 import org.springframework.boot.spring_boot_MusicApp.Models.Playlist;
-import org.springframework.boot.spring_boot_MusicApp.Models.User;
 import org.springframework.boot.spring_boot_MusicApp.Repository_DAO.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,7 +15,7 @@ public class PlaylistServices {
 
     public void addPlaylist(Playlist playlist) throws Exception {
         if (playlistRepository_Dao.existsByName(playlist.getName())) {
-            throw new Exception("Name already registered.");
+            throw new Exception("Name already add to playlist.");
         }
         playlistRepository_Dao.save(playlist);
     }

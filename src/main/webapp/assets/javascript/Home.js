@@ -86,3 +86,43 @@ document.getElementById("logout-form").addEventListener("click", function (event
 	});
 
 });
+
+
+function addFavorite(event) {
+    event.preventDefault();
+
+    console.log("addFavorite function called");
+
+    const songID = document.getElementById("songID").value;
+
+    const requestData = {
+        userID: -1,
+        songID: songID
+    };
+
+    console.log(requestData);
+
+    fetch("/add_favorite", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(requestData)
+    })
+    .then(response => response.text().then(text => {
+        if (response.ok) {
+            return text;
+        } else {
+            throw new Error(text);
+        }
+    }))
+    .then(data => {
+        alert("Add favorite successful!");
+        window.location.href = "Home";
+    })
+    .catch(error => {
+        alert("Add favorite failed: " + error.message);
+    });
+}
+
+

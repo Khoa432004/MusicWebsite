@@ -14,31 +14,37 @@ public class Favorite {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	
     @Column(name = "FavoriteID")
-	private int FavoriteID;
+	private int favoriteID;
 	
 	@Column(name = "UserID")
-	private int UserID;
+	private int userID;
 	
 	@Column(name = "SongID")
-	private int SongID;
-	
+	private int songID;
+
 	public int getFavoriteID() {
-		return FavoriteID;
+		return favoriteID;
 	}
+
 	public void setFavoriteID(int favoriteID) {
-		FavoriteID = favoriteID;
+		this.favoriteID = favoriteID;
 	}
+
 	public int getUserID() {
-		return UserID;
+		return userID;
 	}
+
 	public void setUserID(int userID) {
-		UserID = userID;
+		this.userID = userID;
 	}
+
 	public int getSongID() {
-		return SongID;
+		return songID;
 	}
+
 	public void setSongID(int songID) {
-		SongID = songID;
+		this.songID = songID;
 	}
 	
+
 }
