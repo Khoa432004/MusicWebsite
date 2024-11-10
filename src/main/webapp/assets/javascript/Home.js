@@ -88,12 +88,10 @@ document.getElementById("logout-form").addEventListener("click", function (event
 });
 
 
-function addFavorite(event) {
+function addFavorite(event, songID) {
     event.preventDefault();
 
     console.log("addFavorite function called");
-
-    const songID = document.getElementById("songID").value;
 
     const requestData = {
         userID: -1,
