@@ -1,9 +1,5 @@
 package org.springframework.boot.spring_boot_MusicApp.Models;
 
-
-import java.time.LocalDate;
-import java.time.LocalTime;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

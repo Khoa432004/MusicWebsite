@@ -5,18 +5,20 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.IdClass;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "playlist_song")
+@IdClass(PlaylistSongId.class)
 
 public class Playlist_song {
 	
 	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "PlaylistID")
 	private int playlistID;
 	
+	@Id
 	@Column(name = "SongID")
 	private int songID;
 
