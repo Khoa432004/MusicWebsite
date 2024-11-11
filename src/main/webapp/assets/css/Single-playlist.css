@@ -698,6 +698,7 @@ main {
     margin-top: 2rem;
 }
 
+.favorite-item,
 .playlist-item {
 	height: 7vh;
 	box-sizing: border-box;
@@ -709,7 +710,7 @@ main {
 	margin-bottom: 12px;
 }
 
-
+.favorite-item:hover,
 .playlist-item:hover {
 	background-color: #2e3249;
     cursor: pointer;

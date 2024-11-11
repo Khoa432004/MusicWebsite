@@ -1,7 +1,10 @@
 package org.springframework.boot.spring_boot_MusicApp.Controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.spring_boot_MusicApp.Models.Favorite;
+import org.springframework.boot.spring_boot_MusicApp.Models.SongDTO;
 import org.springframework.boot.spring_boot_MusicApp.Services.FavoriteServices;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -34,5 +37,20 @@ public class FavoriteController {
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Error: " + e.getMessage());
         }
+    }
+    
+    @GetMapping("/user/favorites")
+    @ResponseBody
+    public ResponseEntity<?> getFavoritesByUserID() {
+        HttpSession session = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest().getSession(false);
+
+        if (session == null || session.getAttribute("UserID") == null) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("User not logged in.");
+        }
+
+        int userID = (int) session.getAttribute("UserID");
+        List<SongDTO> favorites = favoriteServices.getSongDTOByUserID(userID);
+
+        return ResponseEntity.ok(favorites);
     }
 }

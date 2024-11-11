@@ -15,23 +15,28 @@ public class Playlist_song {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "PlaylistID")
-	private int PlaylistID;
+	private int playlistID;
 	
 	@Column(name = "SongID")
-	private int SongID;
-	
+	private int songID;
+
 	public int getPlaylistID() {
-		return PlaylistID;
+		return playlistID;
 	}
+
 	public void setPlaylistID(int playlistID) {
-		PlaylistID = playlistID;
+		this.playlistID = playlistID;
 	}
+
 	public int getSongID() {
-		return SongID;
+		return songID;
 	}
+
 	public void setSongID(int songID) {
-		SongID = songID;
+		this.songID = songID;
 	}
+	
+
 	
 	
 }

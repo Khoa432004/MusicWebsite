@@ -14,31 +14,38 @@ public class Artist {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ArtistID")
-	private int ArtistID;
+	private int artistID;
 	
 	@Column(name = "Name")
-	private String Name;
+	private String name;
 	
 	@Column(name = "Avatar")
-	private String Avatar;
-	
+	private String avatar;
+
 	public int getArtistID() {
-		return ArtistID;
+		return artistID;
 	}
+
 	public void setArtistID(int artistID) {
-		ArtistID = artistID;
+		this.artistID = artistID;
 	}
+
 	public String getName() {
-		return Name;
+		return name;
 	}
+
 	public void setName(String name) {
-		Name = name;
+		this.name = name;
 	}
+
 	public String getAvatar() {
-		return Avatar;
+		return avatar;
 	}
+
 	public void setAvatar(String avatar) {
-		Avatar = avatar;
+		this.avatar = avatar;
 	}
+	
+
 	
 }

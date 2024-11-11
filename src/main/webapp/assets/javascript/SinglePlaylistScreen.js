@@ -6,7 +6,11 @@ var modal = document.getElementById("myModal");
 var btn = document.getElementById("addPlaylistBtn");
 var span = document.getElementById("closeModal");
 let timeout;
+const favoriteContent = document.getElementById("favorite-content");
+const playlistContent = document.getElementById("playlist-content");
 
+const playlistitem = document.getElementById("playlist-item");
+const favoriteitem = document.getElementById("favorite-item");
 // Hàm hiển thị logout và ẩn welcome
 function showLogout() {
     clearTimeout(timeout);
@@ -133,7 +137,9 @@ fetch('/user/playlists')
         data.forEach(item => {
             const listItem = document.createElement('div');
             listItem.classList.add('list-item');
-            
+			listItem.addEventListener('click', () => {
+			                showPlaylistContent();
+			            });
             listItem.innerHTML = `
                 <div>
                     <img src="assets/image/Playlist.webp" alt="${item.name}">
@@ -157,44 +163,103 @@ fetch('/user/playlists')
     });
 
 	document.addEventListener("DOMContentLoaded", function () {
-	    const favoriteContent = document.getElementById("favorite-content");
-	    const playlistContent = document.getElementById("playlist-content");
 
 	    const showFavoriteButton = document.getElementById("favourites");
 	    const showPlaylistButton = document.getElementById("playlists");
-
-	    function showFavoriteContent() {
-	        favoriteContent.style.display = "flex";
-	        playlistContent.style.display = "none";
-	    }
-
-	    function showPlaylistContent() {
-	        favoriteContent.style.display = "none";
-	        playlistContent.style.display = "flex";
-	    }
 
 	    showFavoriteButton.addEventListener("click", showFavoriteContent);
 	    showPlaylistButton.addEventListener("click", showPlaylistContent);
 
 	    showFavoriteContent();
 	});
-	
-	document.addEventListener("DOMContentLoaded", function () {
-	            const favoriteContent = document.getElementById("favorite-content");
-	            const playlistContent = document.getElementById("playlist-content");
 
-	            // Kiểm tra xem người dùng đã chọn nội dung nào trên trang trước đó
-	            const preferredContent = localStorage.getItem('preferredContent');
+	fetch('/user/favorites')
+	    .then(response => response.json())
+	    .then(data => {
+	        const playlistItemContainer = document.getElementById('playlist-items');
 
-	            if (preferredContent === 'favorite') {
-	                favoriteContent.style.display = "flex";
-	                playlistContent.style.display = "none";
-	            } else if (preferredContent === 'playlist') {
-	                favoriteContent.style.display = "none";
-	                playlistContent.style.display = "flex";
-	            } else {
-	                // Mặc định, hiển thị content yêu thích
-	                favoriteContent.style.display = "flex";
-	                playlistContent.style.display = "none";
-	            }
-	        });
+	        // Kiểm tra xem phần tử có tồn tại không
+	        if (playlistItemContainer) {
+	            playlistItemContainer.innerHTML = '';
+
+	            data.forEach((song, index) => {
+	                const playlistItem = document.createElement('div');
+	                playlistItem.classList.add('playlist-item');
+	                playlistItem.style.display = 'flex';
+
+	                playlistItem.innerHTML = `
+	                    <div class="left">
+	                        <div>
+	                            ${index + 1}
+	                        </div>
+	                        <div>
+	                            <img src="${song.image}" alt="${song.title}">
+	                            <div class="play-btn">
+	                                <a href="javascript:void(0);" onclick="loadSongDetails(${song.songID})">
+	                                    <i class="fas fa-play"></i>
+	                                </a>
+	                            </div>
+	                        </div>
+	                        <div>
+	                            <h5>${song.title}</h5>
+	                            <p>${song.artistName}</p>
+	                        </div>
+	                    </div>
+	                    <div class="center">
+	                        ${song.duration}
+	                    </div>
+	                    <div class="right">
+	                        <div>
+	                            <i class="far fa-heart"></i>
+	                        </div>
+	                        <div>
+	                            <i class="fas fa-plus"></i>
+	                        </div>
+	                    </div>
+	                `;
+	                playlistItemContainer.appendChild(playlistItem);
+	            });
+	        } else {
+	            console.error('Element with id "playlist-items" not found.');
+	        }
+	    })
+	    .catch(error => {
+	        console.error('Error fetching favorite songs:', error);
+	    });
+
+
+		
+function showFavoriteContent() {
+	favoriteitem.style.display = "flex"
+	favoriteContent.style.display = "flex";
+	playlistitem.style.display = "none";
+	playlistContent.style.display = "none";
+}
+
+function showPlaylistContent() {
+	favoriteitem.style.display = "none"
+	favoriteContent.style.display = "none";
+	playlistitem.style.display = "flex";
+	playlistContent.style.display = "flex";
+}
+		
+document.addEventListener("DOMContentLoaded", function () {
+	const preferredContent = localStorage.getItem('preferredContent');
+
+	if (preferredContent === 'favorite') {
+		favoriteitem.style.display = "flex"
+		favoriteContent.style.display = "flex";
+		playlistitem.style.display = "none";
+		playlistContent.style.display = "none";
+	} else if (preferredContent === 'playlist') {
+		favoriteitem.style.display = "none"
+		favoriteContent.style.display = "none";
+		playlistitem.style.display = "flex";
+		playlistContent.style.display = "flex";
+	} else {
+		playlistitem.style.display = "none";
+		favoriteitem.style.display = "flex";
+	    favoriteContent.style.display = "flex";
+	    playlistContent.style.display = "none";
+	}
+});

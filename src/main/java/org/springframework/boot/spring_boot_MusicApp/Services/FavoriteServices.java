@@ -1,6 +1,7 @@
 package org.springframework.boot.spring_boot_MusicApp.Services;
 
 import org.springframework.boot.spring_boot_MusicApp.Models.Favorite;
+import org.springframework.boot.spring_boot_MusicApp.Models.SongDTO;
 import org.springframework.boot.spring_boot_MusicApp.Repository_DAO.FavoriteRepository_Dao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,7 +24,11 @@ public class FavoriteServices {
 
         favoriteRepository_Dao.save(favorite);
     }
-    public List<Favorite> getPlaylistsByUserID(int userID) {
+    public List<Favorite> getFavoriteByUserID(int userID) {
         return favoriteRepository_Dao.findByUserID(userID);
+    }
+    
+    public List<SongDTO> getSongDTOByUserID(int userID) {
+        return favoriteRepository_Dao.findFavoriteSongsByUserID(userID);
     }
 }
