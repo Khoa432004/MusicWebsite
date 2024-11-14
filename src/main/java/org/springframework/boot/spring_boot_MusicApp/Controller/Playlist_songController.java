@@ -41,7 +41,7 @@ public class Playlist_songController {
     
     @GetMapping("/user/song_playlist")
     @ResponseBody
-    public ResponseEntity<?> getListSongByUserID(@RequestParam(value = "playlistId", required = false) Integer playlistId) {
+    public ResponseEntity<?> getListSongByPlaylistID(@RequestParam(value = "playlistId", required = false) Integer playlistId) {
     	
         if (playlistId == null) {
             return ResponseEntity.badRequest().body("Playlist ID is required.");

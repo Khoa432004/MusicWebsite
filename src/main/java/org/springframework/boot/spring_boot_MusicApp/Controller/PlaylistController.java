@@ -21,7 +21,7 @@ public class PlaylistController {
 	
     @PostMapping("/add_playlist")
     @ResponseBody
-    public ResponseEntity<String> registerUser(@RequestBody Playlist playlist) {
+    public ResponseEntity<String> registerPlaylist(@RequestBody Playlist playlist) {
     	HttpSession session = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest().getSession(false);
         try {
         	playlist.setUserID((int)session.getAttribute("UserID"));
